@@ -1,0 +1,444 @@
+/* shared styling /
+
+/*img styling*/
+img
+    {max-height: 200px; max-width: auto;}
+/* h1 styling*/
+h1
+    {font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align:center;
+    font-size: 6em;
+    text-wrap: auto ;
+    color: black;}
+header a
+    {text-decoration-line: none;}
+/* header styling*/
+header
+    {display:flex;
+    justify-content: space-between;
+    border: black .4em solid;
+    border-radius:10%;
+    background-color: #ffcf76;}
+/*nav styling*/
+nav li a
+    {text-decoration: none;
+    color: black;
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+nav ul
+    {list-style-type: none;
+    display:flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    border: 5px black solid;
+    border-radius:10%;
+    background-color: #ffcf76;}
+nav ul li
+    {display: inline;
+    border-left: 5px black solid;
+    border-right: 5px black solid;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 2%;
+    padding-right: 2%;}
+/*nav psuedo hover styling*/
+nav ul li:hover
+    {background-color: white;;
+    }
+nav li a:hover
+    {font-size: 1.7em; 
+    transition: 2s;}
+/* body styling*/
+body{
+    background-color: #a0ffff;
+    font-family: Arial, Helvetica, sans-serif;
+    width:75%;
+    margin-left: 12.5%;
+    min-width: 583px;
+}
+footer {
+    border-top: rgb(0, 0, 0) outset;
+    background-color: rgb(103, 202, 255);
+    clear: both;
+}
+
+/* end of shared styling */
+
+/* start of jobs page css made by sammie miller */
+/* h1 h2 h3 shared styling*/
+.job_headings
+    {font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align:center;
+    border: black .1em solid;
+    border-radius:30%;
+    background-color: #ffcf76;}
+/*h1 styling*/
+#job_h2
+    {font-size: 5em;
+    }
+/*h2 styling*/
+#job_h3
+    {font-size: 3em;}
+/* Aside styling*/
+#job_aside 
+    {width: 25%; 
+    float: right; 
+    border: 5px solid black;
+    border-radius:20%;
+    margin: 1%;
+    padding: 1%;
+    background-color: #ffcf76;}
+/*jobs listing styling*/
+.job_pos
+    {width:66%;
+    border: black .4em solid;
+    border-radius:10%;
+    margin: 1%;
+    margin-bottom: 10 px;
+    padding-bottom: 3%;}
+/* job title styling*/
+.job_title
+    {text-align: left;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 2em; 
+    color: black;
+    font-weight: bold;
+    width: 66%;
+    margin-left: 25%;
+    }
+/*job psuedo hover styling*/ 
+#job_1:hover,#job_2:hover
+    {background-color: white;
+    text-decoration-line: underline;
+    /*width: 66%;*/
+    margin-left: 17%;
+    font-size:2.2em;
+    text-align: center;
+    border: black 0.1em solid;
+    border-radius: 20%;
+    transition: 2s;
+    }
+/*job link styling*/
+.job_pos a
+{text-decoration: none;}
+/*job no styling*/
+.jobno
+    {text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;}
+.job_list 
+    {list-style-type: none;}
+/*job section styling */
+.job_pos
+    {background-color: #ffcf76;}
+/* job num styling*/
+    .job_num
+    {font-size: 1em;
+    font-family:Arial, Helvetica, sans-serif;
+    text-align: center;
+    font-weight: bold;
+    }
+    /* end of job page css*/
+
+/* index page css */
+#indb1 {
+    /* First text section css, making it aligned and coloured*/
+    /* background image sourced from https://www.publicdomainpictures.net "white-beach-and-blue-sky" by Petr Kratochvil */
+    background-image: url("../styles/images/white-beach-and-blue-sky.jpg");
+    background-clip: inherit;
+    text-align: center;
+    float: center;
+    border: black 0.2em solid;
+    border-radius: 5%;
+}
+#indb1 span {
+    background-color:white;
+}
+#indb2 {
+    /* Second text section css, making it aligned and coloured*/
+    background-color:#efc27adc;
+    text-align: left;
+    float: left;
+    border: black 0.2em solid;
+    border-radius: 5%;
+}
+
+#indb3 {
+    /* Third text section css, making it aligned and coloured*/
+    background-color: #cee1eb;
+    float: right;
+    clear: right;
+    border: black 0.2em solid;
+    border-radius: 5%;
+}
+#indb4 {
+    /* Fourth text section css, making it aligned and coloured*/
+    float: center;
+    background-color: aliceblue;
+    clear: both;
+    text-align: center;
+    border: black 0.2em solid;
+    border-radius: 5%;
+}
+#indquote {
+    /* Css for ahab quote, making it all fancy like */
+    font-family:"Lucida Handwriting", cursive;
+    color: rgb(84, 0, 0);
+    text-shadow: rgb(0, 0, 0);
+    background-color: aliceblue;
+    text-decoration-color: rgb(10, 10, 10);
+    text-decoration-thickness: 0.1em;
+    text-decoration-line:underline;
+}
+#indimg2{
+    /* align image*/
+    float:right;
+}
+#indimg3{
+    /* align image*/
+    float:left;
+    width: 31%;
+    height: auto;
+}
+#indlist {
+    /* fix the bullet point's alignment */
+    font-weight: bold;
+    text-align: left;
+    font-size: small;
+}
+/* end of index page css */
+
+/* start of apply page css*/
+
+/* styling for the sbumit/reset buttons on the form*/
+input[type=submit], input[type=reset]{
+    background-color: #ffcf76;
+    border: solid black .1em;
+    color: black;
+    padding: 4px 4px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+/* each button fills half the row */
+.form-buttons input[type="submit"],
+.form-buttons input[type="reset"] {
+ 
+  border-radius: 6px;
+  padding: 12px 16px;
+}
+
+/* hover effect, same styling as nav bar */
+.form-buttons input[type="submit"]:hover,
+.form-buttons input[type="reset"]:hover {
+  background-color: white;
+  font-size: 1.1em; 
+}
+
+/*Custom accent colour for checkboxes and radio */
+input[type=checkbox], [type=radio] {
+  accent-color: #a0ffff;
+}
+
+/* styling for the fieldset sections*/
+fieldset {
+    border: 2px solid black;
+    border-radius: 10%;
+    margin-bottom: 1em;
+    background-color: #ffcf76;
+}
+
+/* styling for the legend of each fieldset*/
+legend {
+    font-size: 1.2em;
+    font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: white;
+    color: black;
+    padding: 0.2em 0.5em;
+    border: solid black .1em;
+    border-radius: 10%;
+}
+/* 2x2 grid layout to structure the 4 main sections of the form */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1em;
+}
+/* Explicit placement, which fixes issue with bottom right section of the form not being filled,
+ credit to ChatGPT */
+.form-grid fieldset:nth-of-type(1) { grid-column: 1; grid-row: 1; } /* Job Info */
+.form-grid fieldset:nth-of-type(2) { grid-column: 2; grid-row: 1; } /* Personal Info */
+.form-grid fieldset:nth-of-type(3) { grid-column: 1; grid-row: 2; } /* Contact Info */
+.form-grid fieldset:nth-of-type(4) { grid-column: 2; grid-row: 2; } /* Relevant Skills */
+
+/*Align buttons with the grid used for the content of the form*/
+.form-buttons {
+  grid-column: 1 / span 2;
+  grid-row: 3;
+  display: flex;
+  gap: 1rem;
+  padding: 0.5rem 0;
+}
+
+
+/* start of apply page css*/
+
+/* styling for the sbumit/reset buttons on the form*/
+input[type=submit], input[type=reset]{
+    background-color: #ffcf76;
+    border: solid black .1em;
+    color: black;
+    padding: 4px 4px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+/* each button fills half the row */
+.form-buttons input[type="submit"],
+.form-buttons input[type="reset"] {
+ 
+  border-radius: 6px;
+  padding: 12px 16px;
+}
+
+/* hover effect, same styling as nav bar */
+.form-buttons input[type="submit"]:hover,
+.form-buttons input[type="reset"]:hover {
+  background-color: white;
+  font-size: 1.1em; 
+}
+
+/*Custom accent colour for checkboxes and radio */
+input[type=checkbox], [type=radio] {
+  accent-color: #a0ffff;
+}
+
+/* styling for the fieldset sections*/
+fieldset {
+    border: 2px solid black;
+    border-radius: 10%;
+    margin-bottom: 1em;
+    background-color: #ffcf76;
+}
+
+/* styling for the legend of each fieldset*/
+legend {
+    font-size: 1.2em;
+    font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: white;
+    color: black;
+    padding: 0.2em 0.5em;
+    border: solid black .1em;
+    border-radius: 10%;
+}
+/* 2x2 grid layout to structure the 4 main sections of the form */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 1em;
+}
+/* Explicit placement, which fixes issue with bottom right section of the form not being filled,
+ credit to ChatGPT */
+.form-grid fieldset:nth-of-type(1) { grid-column: 1; grid-row: 1; } /* Job Info */
+.form-grid fieldset:nth-of-type(2) { grid-column: 2; grid-row: 1; } /* Personal Info */
+.form-grid fieldset:nth-of-type(3) { grid-column: 1; grid-row: 2; } /* Contact Info */
+.form-grid fieldset:nth-of-type(4) { grid-column: 2; grid-row: 2; } /* Relevant Skills */
+
+/*Align buttons with the grid used for the content of the form*/
+.form-buttons {
+  grid-column: 1 / span 2;
+  grid-row: 3;
+  display: flex;
+  gap: 1rem;
+  padding: 0.5rem 0;
+}
+<<<<<<< HEAD
+/* Import a Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+#about_body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom right, #a8edea, #fed6e3);
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+.about_heading {
+  color: #005f73;
+  font-weight: 600;
+  margin-bottom: 10px; 
+}
+
+.about_section {
+  max-width: 900px;
+  margin: 30px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+img {
+  border-radius: 15px;
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.05);
+}
+
+/* Fun Facts Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+table th, table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+table th {
+  background: #005f73;
+  color: white;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #003d4d;
+  color: white;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #ffdd00;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
