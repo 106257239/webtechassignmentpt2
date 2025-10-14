@@ -108,18 +108,6 @@ footer {
     width: 66%;
     margin-left: 25%;
     }
-/*job psuedo hover styling*/ 
-#job_1:hover,#job_2:hover
-    {background-color: white;
-    text-decoration-line: underline;
-    /*width: 66%;*/
-    margin-left: 17%;
-    font-size:2.2em;
-    text-align: center;
-    border: black 0.1em solid;
-    border-radius: 20%;
-    transition: 2s;
-    }
 /*job link styling*/
 .job_pos a
 {text-decoration: none;}
@@ -132,7 +120,7 @@ footer {
 .job_list 
     {list-style-type: none;}
 /*job section styling */
-.job_pos
+  .job_pos
     {background-color: #ffcf76;}
 /* job num styling*/
     .job_num
@@ -142,7 +130,40 @@ footer {
     font-weight: bold;
     }
     /* end of job page css*/
+    #job_apply_sec
+    {width:66%;
+    border: black .4em solid;
+    background-color: #ffcf76;
+    border-radius:10%;
+    margin: 1%;
+    margin-bottom: 1%;
+    padding-bottom: 0.5%;}
+    
+    #job_apply_button{
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content:center;
+      margin-left: 35%;
+      margin-right: 35%;
+      margin-bottom: 1%;
+      margin-top: 1%;
+      border: 5px black solid;
+      border-radius:10%;
+      padding-top: .02%;
+      padding-bottom: .05%;
+      background-color: #ffffff;
+      text-decoration:none
+    }
+      #job_apply_sec :hover{
 
+      background-color: #a0ffff;
+      }
+    #apply_button_text{
+      font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      text-align:center;
+      color: black;
+      font-size: x-large;
+    }
 /* index page css */
 #indb1 {
     /* First text section css, making it aligned and coloured*/
@@ -151,6 +172,7 @@ footer {
     background-clip: inherit;
     text-align: center;
     float: center;
+    width: 25%;
     border: black 0.2em solid;
     border-radius: 5%;
 }
