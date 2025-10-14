@@ -73,7 +73,9 @@ footer {
     text-align:center;
     border: black .1em solid;
     border-radius:30%;
-    background-color: #ffcf76;}
+    background-color: #ffcf76;
+    margin-bottom: 1%;
+    margin-top: 1%;}
 /*h1 styling*/
 #job_h2
     {font-size: 5em;
