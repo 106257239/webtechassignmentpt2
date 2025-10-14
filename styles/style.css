@@ -81,15 +81,7 @@ footer {
 /*h2 styling*/
 #job_h3
     {font-size: 3em;}
-/* Aside styling*/
-#job_aside 
-    {width: 25%; 
-    float: right; 
-    border: 5px solid black;
-    border-radius:20%;
-    margin: 1%;
-    padding: 1%;
-    background-color: #ffcf76;}
+
 /*jobs listing styling*/
 .job_pos
     {width:66%;
