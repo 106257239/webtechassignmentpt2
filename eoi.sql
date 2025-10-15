@@ -26,6 +26,8 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `eoi`
 --
+create table if not exists eoi;
+
 
 CREATE TABLE `eoi` (
   `id` int(11) NOT NULL,

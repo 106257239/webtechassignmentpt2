@@ -103,6 +103,9 @@ footer {
     margin-left: 25%;
     }
 /*job link styling*/
+.job_ul{
+  list-style-type:square;
+}
 .job_pos a
 {text-decoration: none;}
 /*job no styling*/
@@ -111,8 +114,10 @@ footer {
     font-size: 1.5em;
     font-weight: bold;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;}
-.job_list 
-    {list-style-type: none;}
+.job_list dl
+    /* {list-style-type: none;} */
+.job_list ul
+      {list-style-type:circle}
 /*job section styling */
   .job_pos
     {background-color: #ffcf76;}
@@ -403,7 +408,7 @@ legend {
   box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
 }
 
-ul {
+ ul { 
   list-style-type: none;
   padding: 0;
 }
