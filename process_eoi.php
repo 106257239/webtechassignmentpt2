@@ -21,8 +21,7 @@ require_once('settings.php');
         $otherskills = $_POST['suburb'];
         echo "email: " . htmlspecialchars($email) . "<br>";
         echo "phone: " . htmlspecialchars($phone);
-    INSERT INTO `eoi` (`id`, `reference_no`, `firstname`, `lastname`, `dob`, `gender`, `email`, `p/n`, `adress`, `suburb`, `postcode`, `state`, `skills`, `other skills`, `status`) 
-    VALUES (NULL, ,'$job_refrence','$firstname', '$lastname', '$DOB', '$gender', 
-    '$email', '$phone', '$address', '$suburb', '$postcode', 'state','$frontend', '$otherskills', NULL,)
+    // INSERT INTO `eoi`(`id`, `reference_no`, `firstname`, `lastname`, `dob`, `gender`, `email`, `p/n`, `adress`, `suburb`, `postcode`, `state`, `skills`, `other skills`, `status`) 
+    // VALUES (NULL, ,'$job_refrence','$firstname', '$lastname', '$DOB', '$gender', $email', '$phone', '$address', '$suburb', '$postcode', 'state','$frontend', '$otherskills', NULL,)
 ?>
 hi
