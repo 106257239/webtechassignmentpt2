@@ -359,86 +359,115 @@ legend {
   gap: 1rem;
   padding: 0.5rem 0;
 }
-<<<<<<< HEAD
-/* Import a Google Font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About page of the Save the Shrimps recruitment website">
+  <meta name="keywords" content="about us, team, save the shrimps, swinburne project">
+  <meta name="author" content="Vethum Helith">
+  <title>About Us | Save the Shrimps</title>
 
-#about_body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to bottom right, #a8edea, #fed6e3);
-  color: #333;
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
-}
+  <!-- Embedded About Page CSS -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-.about_heading {
-  color: #005f73;
-  font-weight: 600;
-  margin-bottom: 10px; 
-}
+    body#about_body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, #a8edea, #fed6e3);
+      color: #333333;
+      margin: 0;
+      padding: 0;
+    }
 
-.about_section {
-  max-width: 900px;
-  margin: 30px auto;
-  background: white;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
-}
+    figure {
+      text-align: center;
+      border: 4px solid #005f73;
+      border-radius: 10px;
+      background-color: #ffffff;
+      width: fit-content;
+      margin: 30px auto;
+      padding: 10px;
+    }
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
+    figure img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
 
-li {
-  margin-bottom: 8px;
-}
+    figure img:hover {
+      transform: scale(1.05);
+    }
 
-img {
-  border-radius: 15px;
-  box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease;
-}
+    figcaption {
+      margin-top: 10px;
+      font-style: italic;
+      color: #555555;
+      font-size: 0.95rem;
+    }
 
-img:hover {
-  transform: scale(1.05);
-}
+    table {
+      width: 90%;
+      margin: 20px auto;
+      border-collapse: collapse;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
 
-/* Fun Facts Table */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 15px;
-}
+    th, td {
+      border: 1px solid #cccccc;
+      padding: 12px;
+      text-align: center;
+    }
 
-table th, table td {
-  padding: 12px;
-  border-bottom: 1px solid #ddd;
-  text-align: left;
-}
+    th {
+      background-color: #005f73;
+      color: #ffffff;
+      font-weight: bold;
+    }
 
-table th {
-  background: #005f73;
-  color: white;
-}
+    tr:nth-child(even) {
+      background-color: #f0f0f0;
+    }
 
-/* Footer */
-footer {
-  text-align: center;
-  padding: 15px;
-  background: #003d4d;
-  color: white;
-  font-size: 0.9rem;
-}
+    tr:hover {
+      background-color: #dff6ff;
+      transition: 0.3s;
+    }
+  </style>
+</head>
 
-footer a {
-  color: #ffdd00;
-  text-decoration: none;
-}
+<body id="about_body">
+  <header>
+    <h1>About Us</h1>
+  </header>
 
-footer a:hover {
-  text-decoration: underline;
-}
+  <main>
+    <figure>
+      <img src="styles/images/team_photo.webp" alt="Group photo of Save the Shrimps Dev Team" width="500">
+      <figcaption>The Save the Shrimps Team</figcaption>
+    </figure>
 
+    <table>
+      <caption>Team Fun Facts</caption>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Dream Job</th>
+          <th>Snack</th>
+          <th>Hometown</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Vethum</td><td>Software Engineer</td><td>Energy Drinks</td><td>Melbourne</td></tr>
+      </tbody>
+    </table>
+  </main>
+
+  <footer>
+    &copy; 2025 Save the Shrimps
+  </footer>
+</body>
+</html>
