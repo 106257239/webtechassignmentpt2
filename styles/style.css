@@ -371,105 +371,164 @@ legend {
 
 
   #vethumhelith
-  <!-- Embedded About Page CSS -->
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+ /* === Improved About Page Typography === */
 
-    body#about_body {
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to bottom right, #a8edea, #fed6e3);
-      color: #333333;
-      margin: 0;
-      padding: 0;
-    }
+/* Smooth, professional base font */
+body#about_body {
+  font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(to bottom right, #a8edea, #d0f6ff);
+  color: #1a1a1a;
+  line-height: 1.7;
+  margin: 0;
+  padding: 0 10%;
+}
 
-    figure {
-      text-align: center;
-      border: 4px solid #005f73;
-      border-radius: 10px;
-      background-color: #ffffff;
-      width: fit-content;
-      margin: 30px auto;
-      padding: 10px;
-    }
+/* Headings */
+.about_heading,
+#about_h2 {
+  font-family: "Poppins", sans-serif;
+  color: #004b5f;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
 
-    figure img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 10px;
-      transition: transform 0.3s ease;
-    }
+h2.about_heading {
+  font-size: 2em;
+  border-bottom: 3px solid #005f73;
+  padding-bottom: 5px;
+  display: inline-block;
+}
 
-    figure img:hover {
-      transform: scale(1.05);
-    }
+h3.about_heading {
+  font-size: 1.5em;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  color: #006d77;
+}
 
-    figcaption {
-      margin-top: 10px;
-      font-style: italic;
-      color: #555555;
-      font-size: 0.95rem;
-    }
+/* Paragraphs */
+.about_section p {
+  font-size: 1.05em;
+  margin-bottom: 15px;
+  text-align: justify;
+}
 
-    table {
-      width: 90%;
-      margin: 20px auto;
-      border-collapse: collapse;
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    }
+/* Definition list for member contributions */
+.about_section dl {
+  margin-left: 20px;
+}
 
-    th, td {
-      border: 1px solid #cccccc;
-      padding: 12px;
-      text-align: center;
-    }
+.about_section dt {
+  font-weight: 600;
+  color: #003049;
+  margin-top: 10px;
+}
 
-    th {
-      background-color: #005f73;
-      color: #ffffff;
-      font-weight: bold;
-    }
+.about_section dd {
+  margin-left: 25px;
+  font-size: 1em;
+  color: #202020;
+}
 
-    tr:nth-child(even) {
-      background-color: #f0f0f0;
-    }
+/* Lists (bulleted) */
+.about_section ul {
+  list-style-type: disc;
+  padding-left: 40px;
+  font-size: 1.05em;
+}
 
-    tr:hover {
-      background-color: #dff6ff;
-      transition: 0.3s;
-    }
-  </style>
-</head>
+/* Figure (group photo) */
+figure {
+  text-align: center;
+  border: 4px solid #005f73;
+  border-radius: 10px;
+  background-color: #ffffff;
+  padding: 10px;
+  margin: 40px auto;
+  max-width: 600px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
 
-<body id="about_body">
-  <header>
-    <h1>About Us</h1>
-  </header>
+figure img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
 
-  <main>
-    <figure>
-      <img src="styles/images/team_photo.webp" alt="Group photo of Save the Shrimps Dev Team" width="500">
-      <figcaption>The Save the Shrimps Team</figcaption>
-    </figure>
+figure img:hover {
+  transform: scale(1.03);
+}
 
-    <table>
-      <caption>Team Fun Facts</caption>
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Dream Job</th>
-          <th>Snack</th>
-          <th>Hometown</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>Vethum</td><td>Software Engineer</td><td>Energy Drinks</td><td>Melbourne</td></tr>
-      </tbody>
-    </table>
-  </main>
+figcaption {
+  margin-top: 8px;
+  font-style: italic;
+  color: #333333;
+  font-size: 0.95em;
+}
 
-  <footer>
-    &copy; 2025 Save the Shrimps
-  </footer>
-</body>
-</html>
+/* Table (fun facts) */
+table {
+  width: 90%;
+  margin: 25px auto;
+  border-collapse: collapse;
+  font-size: 1em;
+  box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+  border: 1px solid #cccccc;
+  padding: 12px;
+  text-align: center;
+}
+
+th {
+  background-color: #005f73;
+  color: #ffffff;
+  font-weight: bold;
+  letter-spacing: 0.3px;
+}
+
+tr:nth-child(even) {
+  background-color: #f0f9f9;
+}
+
+tr:hover {
+  background-color: #dff6ff;
+  transition: 0.3s;
+}
+
+/* Aside (contact info) */
+#about_aside {
+  max-width: 80%;
+  margin: 30px auto;
+  border-left: 5px solid #005f73;
+  background-color: #f8fcfc;
+  padding: 15px 20px;
+  border-radius: 8px;
+  color: #333333;
+  font-size: 0.95em;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  background-color: #003d4d;
+  color: #ffffff;
+  padding: 15px;
+  margin-top: 40px;
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: #ffdd00;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
