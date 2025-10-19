@@ -10,22 +10,22 @@
 
 ?>
 <?php
-
+// retrieve from post method form data and assign to variable 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $job_reference = $_POST['job_reference'];
-        $firstname = $_POST['first_name'];
-        $lastname = $_POST['last_name'];
-        $dob = $_POST['DOB'];
-        $gender = $_POST['gender'];
-        $email = $_POST['email'];
-        $phone = $_POST['phone'];
-        $address = $_POST['address'];
-        $suburb = $_POST['suburb'];
-        $postcode = $_POST['postcode'];
-        $state = $_POST['state'];
-        $frontend= $_POST['Frontend'];
-        $otherskills = $_POST['suburb'];
-            // variable gathering testing
+        $job_reference = trim($_POST['job_reference']);
+        $firstname = trim($_POST ['first_name']);
+        $lastname = trim($_POST['last_name']);
+        $dob = trim($_POST['DOB']);
+        $gender = trim($_POST['gender']);
+        $email = trim($_POST['email']);
+        $phone = trim($_POST['phone']);
+        $address = trim($_POST['address']);
+        $suburb = trim($_POST['suburb']);
+        $postcode = trim($_POST['postcode']);
+        $state = trim($_POST['state']);
+        $frontend= trim($_POST['Frontend']);
+        $otherskills = trim($_POST['suburb']);
+        // variable displaying 
             echo $job_reference;
             echo $firstname;
             echo $lastname;
@@ -40,34 +40,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             echo $frontend;
             echo $otherskills;
         }
-// require_once('settings.php');
-$host = "localhost";
-$user = "root";
-$pwd = "";
-$sql_db = "webtech_assignment_2"; // Replace with your actual DB name
+// retrieve required information for connection
+require_once('settings.php');
 
 // connect to database
 $conn = @mysqli_connect($host, $user, $pwd, $sql_db);
 
-// Check connection
+// Check connection if it was a failure or success
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 } else {
     echo "Connected successfully<br>";
 }
-
-$sql = "INSERT INTO `eoi` (`id`, `reference_no`, `firstname`, `lastname`, `dob`, `gender`, `email`,`phone`, `address`, `suburb`, `postcode`, `state`, `skills`, `otherskills`, `status`)
+// insert data from variables in to eoi table 
+$sql =  "INSERT INTO `eoi` (`id`, `reference_no`, `firstname`, `lastname`, `dob`, `gender`, `email`,`phone`, `address`, `suburb`, `postcode`, `state`, `skills`, `otherskills`, `status`)
 VALUES (Null, '$job_reference', '$firstname', '$lastname', '$dob', '$gender', '$email', '$phone', '$address', '$suburb', '$postcode', '$state', '$frontend', '$otherskills', 1 );";
 $results = mysqli_query($conn, $sql);
-
+// echo if results where successful
 if ($results) {
     echo "New record created successfully";
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }
-
+// close sql connections 
 mysqli_close($conn);
 ?>
-hi
 </body>
 </html>
