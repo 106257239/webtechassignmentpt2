@@ -7,7 +7,8 @@
 </head>
 <body>
 <?php
-
+if ($_SERVER["REQUEST_METHOD"] != "POST") {
+    header( 'Location: /webtechassignmentpt2/apply.html' ) ;}
 ?>
 <?php
 // retrieve from post method form data and assign to variable 
@@ -24,21 +25,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $postcode = trim($_POST['postcode']);
         $state = trim($_POST['state']);
         $frontend= trim($_POST['Frontend']);
-        $otherskills = trim($_POST['suburb']);
+        $otherskills = trim($_POST['other_skills']);
         // variable displaying 
-            echo $job_reference;
-            echo $firstname;
-            echo $lastname;
-            echo $dob;
-            echo $gender;
-            echo $email;
-            echo $phone;
-            echo $address;
-            echo $suburb;
-            echo $postcode;
-            echo $state;
-            echo $frontend;
-            echo $otherskills;
+            echo $job_reference . "<br>";
+            echo $firstname. "<br>";
+            echo $lastname. "<br>";
+            echo $dob. "<br>";
+            echo $gender. "<br>";
+            echo $email. "<br>";
+            echo $phone. "<br>";
+            echo $address. "<br>";
+            echo $suburb. "<br>";
+            echo $postcode. "<br>";
+            echo $state. "<br>";
+            echo $frontend. "<br>";
+            echo $otherskills. "<br>";
         }
 // retrieve required information for connection
 require_once('settings.php');
@@ -53,11 +54,13 @@ if (!$conn) {
     echo "Connected successfully<br>";
 }
 // insert data from variables in to eoi table 
-$sql =  "INSERT INTO `eoi` (`id`, `reference_no`, `firstname`, `lastname`, `dob`, `gender`, `email`,`phone`, `address`, `suburb`, `postcode`, `state`, `skills`, `otherskills`, `status`)
-VALUES (Null, '$job_reference', '$firstname', '$lastname', '$dob', '$gender', '$email', '$phone', '$address', '$suburb', '$postcode', '$state', '$frontend', '$otherskills', 1 );";
-$results = mysqli_query($conn, $sql);
+$stmt = $conn->prepare  ("INSERT INTO `eoi` (`id`, `reference_no`, `firstname`, `lastname`, `dob`, `gender`, `email`,`phone`, `address`, `suburb`, `postcode`, `state`, `skills`, `otherskills`, `status`)
+VALUES (Null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1 );");
+$stmt->bind_param("sssssssssssss",  $job_reference,$firstname,$lastname,$dob,$gender,$email,$phone,$address,$suburb,$postcode,$state,$frontend,$otherskills);
+$stmt->execute();
+$results = $stmt->get_result();
 // echo if results where successful
-if ($results) {
+if ($stmt) {
     echo "New record created successfully";
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
