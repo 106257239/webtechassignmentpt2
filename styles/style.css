@@ -65,13 +65,12 @@ footer {
 }
 
 /* end of shared styling */
-
 /* start of jobs page css made by sammie miller */
 /* h1 h2 h3 shared styling*/
 .job_headings
     {font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-align:center;
-    border: black .1em solid;
+    border: black .2em solid;
     border-radius:30%;
     background-color: #ffcf76;
     margin-bottom: 1%;
@@ -87,16 +86,16 @@ footer {
 /*jobs listing styling*/
 .job_pos
     {width:66%;
-    border: black .4em solid;
+    border: black 1px solid;
     border-radius:10%;
     margin: 1%;
-    margin-bottom: 10 px;
+    margin-bottom: .2 em;
     padding-bottom: 3%;}
 /* job title styling*/
 .job_title
     {text-align: left;
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 2em; 
+    font-size: .2em; 
     color: black;
     font-weight: bold;
     width: 66%;
@@ -131,7 +130,7 @@ footer {
     /* end of job page css*/
     #job_apply_sec
     {width:66%;
-    border: black .4em solid;
+    border: black .2em solid;
     background-color: #ffcf76;
     border-radius:10%;
     margin: 1%;

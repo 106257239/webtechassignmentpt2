@@ -13,6 +13,28 @@
         <title>Form Results</title>
 </head>
 <body>
+     <header>
+        <!-- IMG SOURCED FROM https://www.freepik.com/ USER: Catalyst stuff  full link: https://www.freepik.com/free-vector/cute-chef-shrimp-cartoon-vector-icon-illustration-animal-food-icon-concept-isolated-premium-vector_26259299.htm#fromView=keyword&page=1&position=0&uuid=eae536ac-f070-4e07-a549-7e5f0fb771f4&query=Shrimp+chef-->
+            <img src="styles/images/shrimp_no_bg.png"; alt="a cartoon shrimp"; title="Save The Shrimp"; id="shrimp">
+            <!--links heading text to index page -->
+            <a href="index.html"><h1>Save The Krill</h1></a>
+            <!--empty p tag for equal spacing in flexbox  -->
+            <p></p>
+        </header>
+        <!--end of header section-->
+        <!--start of nav section -->
+        <nav>
+        <!--nav sey up as list for styling purposes-->
+            <ul>
+            <!--links to each page of website with _self as target to open on same page-->
+                <li><a href="./index.html" target="_self" title="Index Page" hreflang="english" >Home Page</a></li>
+                <li><a href="./about.html" target="_self" title="About Page" hreflang="english">About Us</a></li>
+                <li><a href="./jobs.html" target="_self" title="Jobs Page" hreflang="english">Jobs</a></li>
+                <li><a href="./apply.html" target="_self" title="Apply page" hreflang="english">Volunteer</a></li>
+            </ul>
+        </nav>
+        <!--end of nav section-->
+    <h2 class="job_headings" id="job_h2"> Your Application has been submitted<h2>
 <?php
 if ($_SERVER["REQUEST_METHOD"] != "POST") {
     header( 'Location: /webtechassignmentpt2/apply.html' ) ;}
@@ -39,12 +61,12 @@ require_once('settings.php');
 // connect to database
 $conn = @mysqli_connect($host, $user, $pwd, $sql_db);
 
-// Check connection if it was a failure or success
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
-} else {
-    echo "Connected successfully<br>";}
-
+// Check connection status
+// if (!$conn) {
+//     die("Connection failed: " . mysqli_connect_error());
+// } else {
+//     echo "Connected successfully<br>";}
+// create table if table does not exist
     $tablename = "eoi";
     $createTableSQL = "CREATE TABLE IF NOT EXISTS $tablename (
         id INT(11) NOT NULL AUTO_INCREMENT,
@@ -65,51 +87,82 @@ if (!$conn) {
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         PRIMARY KEY (id)
     ) ENGINE=InnoDB;";
-
+// error handeling for table creation 
     if (!mysqli_query($conn, $createTableSQL)) {
         die(" Error creating table: " . mysqli_error($conn));
     } else {
-        echo " Table '$tablename' ready.<br>";
+        // echo " Table '$tablename' ready.<br>";
     }
 
 
 //insert data from variables in to eoi table 
-$stmt = $conn->prepare  ("INSERT INTO `eoi` (`id`, `reference_no`, `firstname`, `lastname`, `dob`, `gender`, `email`,`phone`, `address`, `suburb`, `postcode`, `state`, `skills`, `otherskills`, `status`)
-VALUES (Null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1 );");
-$stmt->bind_param("sssssssssssss",  $job_reference,$firstname,$lastname,$dob,$gender,$email,$phone,$address,$suburb,$postcode,$state,$frontend,$otherskills);
-$stmt->execute();
-$results = $stmt->get_result();
-// echo if results where successful
-if ($stmt) {
-    echo "New record created successfully";
-} else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-}
+    $stmt = $conn->prepare  ("INSERT INTO `eoi` (`id`, `reference_no`, `firstname`, `lastname`, `dob`, `gender`, `email`,`phone`, `address`, `suburb`, `postcode`, `state`, `skills`, `otherskills`, `status`)
+        VALUES (Null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1 );");
+    $stmt->bind_param("sssssssssssss",  $job_reference,$firstname,$lastname,$dob,$gender,$email,$phone,$address,$suburb,$postcode,$state,$frontend,$otherskills);
+    $stmt->execute();
+    $results = $stmt->get_result();
+    // echo if results where successful
+    // if ($stmt) {
+    //     echo "New record created successfully";
+    // } else {
+    //     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    // }
 // close sql connections 
-mysqli_close($conn);
-
-        // variable displaying 
-            echo $job_reference . "<br>";
-            echo $firstname. "<br>";
-            echo $lastname. "<br>";
-            echo $dob. "<br>";
-            echo $gender. "<br>";
-            echo $email. "<br>";
-            echo $phone. "<br>";
-            echo $address. "<br>";
-            echo $suburb. "<br>";
-            echo $postcode. "<br>";
-            echo $state. "<br>";
-            echo $frontend. "<br>";
-            echo $otherskills. "<br>";
+    mysqli_close($conn);
+    ?>
+    <section class="job_pos">
+    <table>
+        <caption><h2>Your Application<h2></caption>
+        <thead>
+            <tr>
+                <th>Field</th>
+                <th>Answer</th>
+            </tr>
+        </thead>
+<?php
+        $jobnum = rand();
+        // variable displaying
+            echo "<tbody>";
+            echo "<tr>";
+            echo "<td>Application No</td>";
+            echo  "<td>" . $jobnum . "<td></tr>";
+            echo "<tr><td>Job Reference</td>";
+            echo "<td>" . $job_reference . "</td></tr>";
+            echo "<tr><td>Name</,td>";
+            echo "<td>". $firstname." " .$lastname. "</td></tr>";
+            // echo $lastname. "<br>";
+            echo "<tr><td>DOB</td>";
+            echo "<td>" . $dob. "</td></tr>";
+            echo "<tr><td>Gender</td>";
+            echo "<td>" . $gender. "</td></tr>";
+            echo "<tr><td>Email</td>";
+            echo "<td>" . $email. "</td></tr>";
+            echo "<tr><td>Phone Number</td>";
+            echo "<td>" . $phone. "</td></tr>";
+            echo "<tr><td>Address</td>";
+            echo "<td>" . $address. " ".$suburb." ".$postcode." ". $state.  "</td></tr>";
+            // echo $suburb. "<br>";
+            // echo $postcode. "<br>";
+            // echo $state. "<br>";
+            echo "<tr><td>Skills</td>";
+            echo "<td>". $frontend." ". $otherskills. "</td></tr>";
+            // echo $otherskills. "<br>";
         }
-//Data sanatising 
-function sanitise_data($data) {
-    $data = trim($data);                 
-    $data = htmlspecialchars($data);
-    $data = stripslashes($data);       
+    //Data sanatising 
+    function sanitise_data($data) {
+        $data = trim($data);                 
+        $data = htmlspecialchars($data);
+        $data = stripslashes($data);       
     return $data;
 }
 ?>
+</tbody>
+</table>
+</section>
+ <footer>
+        <!-- footer with copyright and other details, along with the link to the Jira board. -->
+        <p id="footercopy">&copy; Copyright Save the Krill 1830-2025 &trade; &reg;  
+        <a href="https://lachiecolville.atlassian.net/jira/software/projects/T2G/boards/34/backlog?epics=visible&jql=parent%20IN%20%28__OPTIMISTIC_UI__%2C%20empty%2C%20T2G-7%2C%20T2G-7%2C%20T2G-8%29">Jira</a> </p>
+    </footer>
 </body>
 </html>
