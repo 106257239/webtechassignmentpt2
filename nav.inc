@@ -7,3 +7,4 @@
     <li><a href="manage.php">Manage EOIs</a></li>
   </ul>
 </nav>
+<li><a href="logout.php">Logout</a></li>
