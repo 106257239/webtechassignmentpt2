@@ -7,7 +7,234 @@
     <meta name="keywords" content="about us, team, save the shrimps, swinburne project">
     <meta name="author" content="Vethum Helith">
     <link href="styles/style.css" rel="stylesheet">
-    
+ <style>    #vethumhelith
+ /* === Improved About Page Typography === */
+
+/* ======================================================
+   ABOUT PAGE STYLES — Save the Shrimps
+   Designer: Vethum Helith
+   Style Goals:
+   ✅ Student IDs right-aligned and elegant
+   ✅ Group photo <figure> with border & glow
+   ✅ Table with bold headers, hex colours & hover
+   ✅ Smooth typography (Poppins + Merriweather)
+   ✅ Ocean-inspired theme with coral highlights
+====================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Merriweather:wght@400;700&display=swap');
+
+/* ----- Base Page Styling ----- */
+body#about_body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom right, #a8edea, #d0f6ff);
+  color: #1a1a1a;
+  line-height: 1.8;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container spacing for readability */
+main {
+  width: 85%;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px 50px;
+}
+
+/* ----- Headings ----- */
+.about_heading {
+  text-align: center;
+  color: #004b5f;
+  font-family: 'Merriweather', serif;
+  margin-bottom: 15px;
+  letter-spacing: 0.5px;
+}
+
+h2.about_heading {
+  font-size: 2.2em;
+  border-bottom: 4px solid #ff6f61; /* coral accent */
+  display: inline-block;
+  padding-bottom: 6px;
+}
+
+h3.about_heading {
+  color: #005f73;
+  font-size: 1.6em;
+  margin-top: 40px;
+  text-align: left;
+  border-left: 6px solid #005f73;
+  padding-left: 10px;
+  font-weight: 600;
+}
+
+/* ----- Paragraphs and Text ----- */
+.about_section p {
+  font-size: 1.05em;
+  margin-bottom: 15px;
+  text-align: justify;
+  color: #2f2f2f;
+}
+
+.about_section ul {
+  list-style-type: disc;
+  padding-left: 40px;
+}
+
+.about_section li {
+  font-size: 1.05em;
+  margin-bottom: 8px;
+}
+
+/* ----- Student IDs ----- */
+.student-ids {
+  text-align: right;
+  font-weight: 600;
+  color: #003049;
+  margin-top: 20px;
+  margin-right: 7%;
+  font-size: 1.05em;
+  line-height: 1.6;
+  background: #e3f7f7;
+  border-left: 5px solid #005f73;
+  border-radius: 8px;
+  padding: 10px 20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  font-family: 'Merriweather', serif;
+}
+
+/* ----- Group Photo (Figure) ----- */
+figure {
+  text-align: center;
+  border: 3px solid #005f73;
+  border-radius: 12px;
+  background-color: #ffffff;
+  width: fit-content;
+  margin: 40px auto;
+  padding: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+figure:hover {
+  transform: scale(1.02);
+  border-color: #ff6f61;
+  box-shadow: 0 8px 20px rgba(255, 111, 97, 0.4);
+}
+
+figure img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+figcaption {
+  margin-top: 10px;
+  font-style: italic;
+  color: #333333;
+  font-size: 0.95rem;
+}
+
+/* ----- Table (Fun Facts) ----- */
+table {
+  width: 100%;
+  margin: 30px auto;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  font-size: 1em;
+}
+
+th, td {
+  border: 1px solid #cccccc;
+  padding: 14px;
+  text-align: center;
+}
+
+th {
+  background-color: #005f73; /* deep teal */
+  color: #ffffff;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+}
+
+tr:nth-child(even) {
+  background-color: #eaf9fa; /* pale aqua */
+}
+
+tr:hover {
+  background-color: #ffebe6; /* coral tint */
+  transition: 0.3s;
+}
+
+/* ----- Aside Section (Note) ----- */
+#about_aside {
+  margin: 40px auto;
+  padding: 15px 20px;
+  border-left: 6px solid #005f73;
+  background-color: #f6fbfb;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  font-style: italic;
+  font-size: 0.95em;
+}
+
+/* ----- Footer ----- */
+footer {
+  text-align: center;
+  background-color: #003d4d;
+  color: #ffffff;
+  padding: 20px;
+  font-size: 0.95em;
+  letter-spacing: 0.4px;
+  margin-top: 40px;
+}
+
+footer a {
+  color: #ffdd00;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+/* === Group photo styling === */
+figure {
+  text-align: center;
+  border: 4px solid #005f73;     /* teal border */
+  border-radius: 12px;
+  background-color: #ffffff;
+  padding: 10px;
+  margin: 30px auto;
+  width: fit-content;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+figure:hover {
+  transform: scale(1.03);
+  border-color: #ff6f61;          /* coral highlight on hover */
+}
+
+figure img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+figcaption {
+  margin-top: 8px;
+  font-style: italic;
+  color: #333333;
+  font-size: 0.95em;
+}
+
+}
+</style>
+
     <title>About Us | Save the Shrimps</title>
 </head>
 <body id="about_body">
@@ -90,7 +317,7 @@
         <section class ="about_section" aria-labelledby="photo_h3">
             <h3 id="photo_h3" class="about_heading">Meet the Team</h3>
             <figure>
-                <img src="styles/images/Screenshot_2025-09-24_at_5.44.08_pm.webp" alt="Group photo of Save the Shrimps Dev Team" width="500">
+                <img src="styles/images/TeamPhoto" alt="Group photo of Save the Shrimps Dev Team" width="500">
                 
          
    

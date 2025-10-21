@@ -1,4 +1,4 @@
-#made the mamange.php file
+
 <?php
 // Include header, navigation, and database settings
 include('header.inc');
