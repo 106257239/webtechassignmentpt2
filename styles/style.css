@@ -67,13 +67,14 @@ footer {
 /* end of shared styling */
 
 /* start of jobs page css made by sammie miller */
-/* h1 h2 h3 shared styling*/
 .job_headings
     {font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-align:center;
-    border: black .1em solid;
-    border-radius:30%;
-    background-color: #ffcf76;}
+    border: black 2px solid;
+    border-radius:1%;
+    background-color: #ffcf76;
+    margin-bottom: 1%;
+    margin-top: 1%;}
 /*h1 styling*/
 #job_h2
     {font-size: 5em;
@@ -81,46 +82,29 @@ footer {
 /*h2 styling*/
 #job_h3
     {font-size: 3em;}
-/* Aside styling*/
-#job_aside 
-    {width: 25%; 
-    float: right; 
-    border: 5px solid black;
-    border-radius:20%;
-    margin: 1%;
-    padding: 1%;
-    background-color: #ffcf76;}
+
 /*jobs listing styling*/
 .job_pos
     {width:66%;
-    border: black .4em solid;
+    border: black 2px solid;
     border-radius:10%;
     margin: 1%;
-    margin-bottom: 10 px;
+    margin-bottom: .2 em;
     padding-bottom: 3%;}
 /* job title styling*/
 .job_title
-    {text-align: left;
+    {text-align: center;
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 2em; 
     color: black;
     font-weight: bold;
     width: 66%;
-    margin-left: 25%;
-    }
-/*job psuedo hover styling*/ 
-#job_1:hover,#job_2:hover
-    {background-color: white;
-    text-decoration-line: underline;
-    /*width: 66%;*/
     margin-left: 17%;
-    font-size:2.2em;
-    text-align: center;
-    border: black 0.1em solid;
-    border-radius: 20%;
-    transition: 2s;
     }
 /*job link styling*/
+.job_ul{
+  list-style-type:square;
+}
 .job_pos a
 {text-decoration: none;}
 /*job no styling*/
@@ -129,10 +113,12 @@ footer {
     font-size: 1.5em;
     font-weight: bold;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;}
-.job_list 
-    {list-style-type: none;}
+.job_list dl
+    /* {list-style-type: none;} */
+.job_list ul
+      {list-style-type:circle}
 /*job section styling */
-.job_pos
+  .job_pos
     {background-color: #ffcf76;}
 /* job num styling*/
     .job_num
@@ -142,7 +128,40 @@ footer {
     font-weight: bold;
     }
     /* end of job page css*/
+    #job_apply_sec
+    {width:66%;
+    border: black 2px solid;
+    background-color: #ffcf76;
+    border-radius:10%;
+    margin: 1%;
+    margin-bottom: 1%;
+    padding-bottom: 0.5%;}
+    
+    #job_apply_button{
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content:center;
+      margin-left: 35%;
+      margin-right: 35%;
+      margin-bottom: 1%;
+      margin-top: 1%;
+      border: 2px black solid;
+      border-radius:10%;
+      padding-top: .02%;
+      padding-bottom: .05%;
+      background-color: #ffffff;
+      text-decoration:none
+    }
+      #job_apply_sec :hover{
 
+      background-color: #a0ffff;
+      }
+    #apply_button_text{
+      font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      text-align:center;
+      color: black;
+      font-size: x-large;
+    }
 /* index page css */
 #indb1 {
     /* First text section css, making it aligned and coloured*/
