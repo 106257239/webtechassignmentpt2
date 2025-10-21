@@ -11,20 +11,11 @@
     <title>Volunteer with us!</title>
 </head>
 <body>
-<!-- header which includes title of the webpage and the logo for our company-->
-    <header>
-        <img src="styles/images/shrimp_no_bg.png" alt="Shrimp Logo" id="logo">
-        <h1>Volunteer with us!</h1>
-    </header>
-<!-- Nav bar which is consistent across the whole site -->
-    <nav>
-        <ul>
-            <li><a href="./index.html" target="_self" title="Home Page" hreflang="english" >Home Page</a></li>
-            <li><a href="./about.html" target="_self" title="About Page" hreflang="english">About Us</a></li>
-            <li><a href="./jobs.html" target="_self" title="Jobs Page" hreflang="english">Jobs</a></li>
-            <li><a href="./apply.html" target="_self" title="Apply page" hreflang="english">Volunteer</a></li>
-        </ul>
-    </nav>
+<!-- header and nav which includes title of the webpage and the logo for our company-->
+<?php
+    include('header.inc');
+    include('nav.inc');
+?>
 
     <h3>
         If you're eager to begin working with us, please fill the form out below
@@ -109,10 +100,8 @@
         </div>
     </form>
     <!-- Footer that is the same across all pages-->
-    <footer>
-        <!-- footer with copyright and other details, along with the link to the Jira board. -->
-        <p id="footercopy">&copy; Copyright Save the Krill 1830-2025 &trade; &reg;  
-        <a href="https://lachiecolville.atlassian.net/jira/software/projects/T2G/boards/34/backlog?epics=visible&jql=parent%20IN%20%28__OPTIMISTIC_UI__%2C%20empty%2C%20T2G-7%2C%20T2G-7%2C%20T2G-8%29">Jira</a> </p>
-    </footer>
+<?php
+    include('footer.inc');
+?>
 </body>
 </html>

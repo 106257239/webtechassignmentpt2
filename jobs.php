@@ -15,28 +15,12 @@
 <!-- start of body section-->
     <body id="job_body">
 <!-- header/nav (shared across all pages)-->
-    <!--start of header -->    
-        <header>
-        <!-- IMG SOURCED FROM https://www.freepik.com/ USER: Catalyst stuff  full link: https://www.freepik.com/free-vector/cute-chef-shrimp-cartoon-vector-icon-illustration-animal-food-icon-concept-isolated-premium-vector_26259299.htm#fromView=keyword&page=1&position=0&uuid=eae536ac-f070-4e07-a549-7e5f0fb771f4&query=Shrimp+chef-->
-            <img src="styles/images/shrimp_no_bg.png"; alt="a cartoon shrimp"; title="Save The Shrimp"; id="shrimp">
-            <!--links heading text to index page -->
-            <a href="index.html"><h1>Save The Krill</h1></a>
-            <!--empty p tag for equal spacing in flexbox  -->
-            <p></p>
-        </header>
-        <!--end of header section-->
-        <!--start of nav section -->
-        <nav>
-        <!--nav sey up as list for styling purposes-->
-            <ul>
-            <!--links to each page of website with _self as target to open on same page-->
-                <li><a href="./index.html" target="_self" title="Home Page" hreflang="english" >Home Page</a></li>
-                <li><a href="./about.html" target="_self" title="About Page" hreflang="english">About Us</a></li>
-                <li><a href="./jobs.html" target="_self" title="Jobs Page" hreflang="english">Jobs</a></li>
-                <li><a href="./apply.html" target="_self" title="Apply page" hreflang="english">Volunteer</a></li>
-            </ul>
-        </nav>
-        <!--end of nav section-->
+    <!--start of header and nav -->    
+<?php
+    include('header.inc');
+    include('nav.inc');
+?>
+        <!--end of header and nav section-->
         <!--start of content -->
         <main>
         
@@ -124,11 +108,9 @@
         <!--end of main-->
         <!--footer shared across all pages-->
         <!--start of footer-->
-        <footer>
-            <!-- footer with copyright and other details, along with the link to the Jira board. -->
-            <p id="footercopy">&copy; Copyright Save the Krill 1830-2025 &trade; &reg;  
-            <a href="https://lachiecolville.atlassian.net/jira/software/projects/T2G/boards/34/backlog?epics=visible&jql=parent%20IN%20%28__OPTIMISTIC_UI__%2C%20empty%2C%20T2G-7%2C%20T2G-7%2C%20T2G-8%29">Jira</a> </p>
-        </footer>
+<?php
+    include('footer.inc');
+?>
         <!--end of footer-->
     </body>
     <!--end of body-->
