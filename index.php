@@ -41,7 +41,7 @@
             </ul>
         </section>
         <!-- IMG SOURCED FROM https://pixabay.com/ USER: TheMoodCreator  full link: https://pixabay.com/photos/river-boat-sunset-nature-blue-8235272-->
-        <img src="styles/images/river-8235272_1920.jpg"; alt="river by TheMoodCreator"; title="river by TheMoodCreator"; id="indimg2">
+        <img src="styles/images/river-8235272_1920.jpg"; alt="river by TheMoodCreator"; title="river"; id="indimg2">
         <section id="indb3">
             <h2>The Marine Menace</h2>
             <!-- Cap Ahab quote in very fancy font with fancy effects -->
@@ -55,7 +55,7 @@
             </ul>
         </section>
         <!--IMG SOURCED FROM https://www.publicdomainpictures.net/en/view-image.php?image=266592&picture=whale-in-water "Whale in water" by Linnaea Mallette-->
-        <img src="styles/images/whale-in-water.jpg" alt="Whale in Water by Linnaea Mellette" title="Whale in Water by Linnaea Mellette" id="indimg3"/>
+        <img src="styles/images/whale-in-water.jpg" alt="Whale in Water by Linnaea Mellette" title="Whale in Water" id="indimg3"/>
         <section id="indb4">
             <!-- Inspirational stuff asking to volenteer or donate to make a change -->
             <h2>You can make a change!</h2>
