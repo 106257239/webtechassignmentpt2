@@ -1,6 +1,5 @@
 <?php
-    $host = "localhost";
-    $user = "root";
-    $pwd = "";
-    $sql_db = "team_contributions";
-?>
+$host = "localhost";
+$user = "root";
+$pwd = "";
+$sql_db = "webtech_assignment_2"; 
