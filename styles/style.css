@@ -183,16 +183,6 @@ footer {
     border: black 0.2em solid;
     border-radius: 5%;
 }
-#indquote {
-    /* Css for ahab quote, making it all fancy like */
-    font-family:"Lucida Handwriting", cursive;
-    color: rgb(84, 0, 0);
-    text-shadow: rgb(0, 0, 0);
-    background-color: aliceblue;
-    text-decoration-color: rgb(10, 10, 10);
-    text-decoration-thickness: 0.1em;
-    text-decoration-line:underline;
-}
 #indimg2{
     /* align image*/
     float:right;

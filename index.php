@@ -45,7 +45,7 @@
         <section id="indb3">
             <h2>The Marine Menace</h2>
             <!-- Cap Ahab quote in very fancy font with fancy effects -->
-            <h3 id="indquote" style="font-style: italic;">"He's not a whale, he's the <strong>devil</strong> himself" - Capt Ahab</h3>
+            <h3 style="font-family:'Lucida Handwriting', cursive; color: rgb(84, 0, 0); text-shadow: rgb(0, 0, 0); background-color: aliceblue; text-decoration-color: rgb(10, 10, 10); text-decoration-thickness: 0.1em; text-decoration-line:underline;">"He's not a whale, he's the <strong>devil</strong> himself" - Capt Ahab</h3>
             <p>Whales are the no.1 predator for krill in the wild, some species of whale exclusively <br> feed on them and kill <strong>billions</strong> of krill over their lifetime. We specialise in reducing <br> the whale population in order to lessen the impact that they have on the krill population. <br>Here are but a few reasons this is absolutely nessisary:</p>
             <ul id = "indlist">
                 <li>Blue whales exclusively feed on krill, that's the animal equivilent of genocide!</li>
