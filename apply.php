@@ -46,14 +46,14 @@
                 <input type="text" id="last_name" name="last_name"><br>
 
                 <label for="DOB">Date of Birth:</label>
-                <input type="date" id="DOB" name="DOB" required><br>
+                <input type="date" id="DOB" name="DOB" ><br>
 
                 Gender:
-                <input type="radio" id="male" name="gender" value="male" required>
+                <input type="radio" id="male" name="gender" value="male">
                 <label for="gender">Male</label>
-                <input type="radio" id="Female" name="gender" value="female" required>
+                <input type="radio" id="Female" name="gender" value="female">
                 <label for="gender">Female</label>
-                <input type="radio" id="Prefer" name="gender" value="Prefer not to say" required>
+                <input type="radio" id="Prefer" name="gender" value="Prefer not to say">
                 <label for="Prefer">Prefer not to say</label>
             </fieldset>
         
@@ -61,17 +61,17 @@
             <fieldset>
                 <legend>Contact Information</legend>
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required><br>    
+                <input type="email" id="email" name="email"><br>    
                 <label for="phone">Phone Number:</label>
-                <input type="tel" id="phone" name="phone" required><br>
+                <input type="tel" id="phone" name="phone"><br>
                 <label for="address">Street Address:</label>
-                <input type="text" id="address" name="address" required ><br>
+                <input type="text" id="address" name="address" ><br>
                 <label for="suburb">Suburb:</label> 
-                <input type="text" id="suburb" name="suburb" required ><br>
+                <input type="text" id="suburb" name="suburb"><br>
                 <label for="postcode">Postcode:</label>
-                <input type="text" id="postcode" name="postcode" required ><br>
+                <input type="text" id="postcode" name="postcode"><br>
                 <label for="state">State:</label>
-                <select id="state" name="state" required>
+                <select id="state" name="state" >
                     <option value="">Select your state</option>
                     <option value="VIC">VIC</option>
                     <option value="NSW">NSW</option>
