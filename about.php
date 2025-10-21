@@ -117,8 +117,8 @@
           </tr>
           <tr>
             <td>Jack</td>
-            <td>Full-Stack Developer</td>
-            <td>Pizza</td>
+            <td>Game Dev</td>
+            <td>Chocolate Milk</td>
             <td>Melbourne</td>
           </tr>
           <tr>
@@ -136,7 +136,34 @@
         </tbody>
       </table>
     </section>
+<?php
+  require_once "settings.php";
+  $dbconn = @mysqli_connect($host,$user,$pwd,$sql_db);
+  if($dbconn){
+      $query = "SELECT * FROM contributions";
+      $result = mysqli_query($dbconn, $query);
+      if($result){
 
+      }else{echo "<p>There are no contributions to display.</p>";}
+      mysqli_close($dbconn);
+  }else{ echo "<p>Unable to connect to the db.</p>";}
+?>
+      <table>
+          <thead>
+              <th>Name</th>
+              <th>Part 1 contributions</th>
+              <th>Part 2 contributions</th>
+          </thead>
+<?php
+  while ($row = mysqli_fetch_assoc($result)) {
+  echo "<tr>";
+  echo "<td>" . $row['name'] . "</td>";
+  echo "<td>" . $row['pt1'] . "</td>";
+  echo "<td>" . $row['pt2'] . "</td>";
+  echo "</tr>";
+  }
+?>
+      </table>
     <!-- Contact info -->
     <aside id="about_aside">
       <p style="font-style: italic;">
