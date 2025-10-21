@@ -237,14 +237,14 @@ figcaption {
 
     <title>About Us | Save the Shrimps</title>
 </head>
+
 <body id="about_body">
-    <!-- Shared header -->
-    <header>
-        <!-- IMG SOURCED FROM https://www.freepik.com/ USER: Catalyst stuff -->
-        <img src="styles/images/shrimp_no_bg.png" alt="cartoon shrimp mascot" title="Save The Shrimp" id="shrimp">
-        <a href="index.html"><h1>Save The Krill</h1></a>
-        <p></p>
-    </header>
+  <!-- Shared header -->
+  <header>
+    <!-- Image sourced from https://www.freepik.com/ (User: Catalyst stuff) -->
+    <img src="styles/images/shrimp_no_bg.png" alt="cartoon shrimp mascot" title="Save The Shrimps" id="shrimp">
+    <a href="index.html"><h1>Save The Shrimps</h1></a>
+  </header>
 
     <!-- Shared nav -->
     <nav>
@@ -255,13 +255,7 @@ figcaption {
             <li><a href="./apply.html" target="_self" title="Apply Page" hreflang="en">Volunteer</a></li>
         </ul>
     </nav>
-<!-- Student IDs (right side) -->
-  <div class="student-ids">
-    Sammie Miller – 106257239@student.swin.edu.au<br>
-    Vethum Helith – 105218578@student.swin.edu.au<br>
-    Lauchie Colvile – 106278803@student.swin.edu.au<br>
-    Jack Milan Krbaleski – 105913093@student.swin.edu.au
-  </div>
+
     <!-- Main content -->
     <main>
         <!-- Page heading -->
@@ -269,120 +263,119 @@ figcaption {
             <h2 id="about_h2" class="about_heading">About Us</h2>
         </section>
 
-        <!-- Group introduction -->
-        <section class ="about_section" aria-labelledby="who_h3">
-            <h3 id="who_h3" class="about_heading">Who We Are</h3>
-            <p>
-                We are the Save the Shrimps Devs, a student project team passionate about 
-                raising awareness for marine life. Our mission is to combine technology, creativity, 
-                and teamwork to build a fun, accessible recruitment website while learning real-world 
-                coding skills. 
-            </p>
-            <p>
-                This project exists to inspire environmental responsibility and to showcase our 
-                abilities as developers working together toward a shared goal.
-            </p>
-        </section>
+    <!-- Group introduction -->
+    <section class="about_section">
+      <h3 id="who_h3" class="about_heading">Who We Are</h3>
+      <p>
+        We are the Save the Shrimps Devs, a student project team passionate about 
+        raising awareness for marine life. Our mission is to combine technology, creativity, 
+        and teamwork to build a fun, accessible recruitment website while learning real-world 
+        coding skills. 
+      </p>
+      <p>
+        This project exists to inspire environmental responsibility and to showcase our 
+        abilities as developers working together toward a shared goal.
+      </p>
+    </section>
 
-        <!-- Team details -->
-        <section class ="about_section" aria-labelledby="team_h3">
-            <h3 id="team_h3" class="about_heading">Our Team</h3>
-            <ul>
-                <li>Group Name: Save the Shrimps</li>
-                <li>Class: Web Development Foundations</li>
-                <li>Day/Time: Tuesday, 2:30 PM – 4:30 PM</li>
-            </ul>
-        </section>
+    <!-- Team details -->
+    <section class="about_section">
+      <h3 id="team_h3" class="about_heading">Our Team</h3>
+      <ul>
+        <li>Group Name: Save the Shrimps</li>
+        <li>Class: Web Development Foundations</li>
+        <li>Day/Time: Tuesday, 2:30 PM – 4:30 PM</li>
+      </ul>
+    </section>
 
-        <!-- Member contributions -->
-        <section class ="about_section" aria-labelledby="contri_h3">
-            <h3 id="contri_h3" class="about_heading">Member Contributions</h3>
-            <dl>
-                <dt>Lachie</dt>
-                <dd>Designed and developed the Apply page, ensuring the volunteer form is simple, user-friendly, and accessible.</dd>
+    <!-- Member contributions -->
+    <section class="about_section">
+      <h3 id="contri_h3" class="about_heading">Member Contributions</h3>
+      <dl>
+        <dt>Lachie</dt>
+        <dd>Designed and developed the Apply page, ensuring the volunteer form is simple, user-friendly, and accessible.</dd>
 
-                <dt>Jack</dt>
-                <dd>Created the Home page, giving the site a strong introduction with smooth navigation and a professional first impression.</dd>
+        <dt>Jack</dt>
+        <dd>Created the Home page, giving the site a strong introduction with smooth navigation and a professional first impression.</dd>
 
-                <dt>Sammie</dt>
-                <dd>Built the Jobs page, presenting job opportunities clearly while focusing on readability and visitor engagement.</dd>
+        <dt>Sammie</dt>
+        <dd>Built the Jobs page, presenting job opportunities clearly while focusing on readability and visitor engagement.</dd>
 
-                <dt>Vethum</dt>
-                <dd>Designed and polished the About page, highlighting our mission, team profiles, fun facts, and overall group identity.</dd>
-            </dl>
-            <p>Together, we combined creativity, technical skills, and teamwork to deliver a site that reflects both our coding abilities and our commitment to collaboration.</p>
-        </section>
+        <dt>Vethum</dt>
+        <dd>Designed and polished the About page, highlighting our mission, team profiles, fun facts, and overall group identity.</dd>
+      </dl>
+      <p>
+        Together, we combined creativity, technical skills, and teamwork to deliver a site that reflects both our coding abilities and our commitment to collaboration.
+      </p>
+    </section>
 
         <!-- Team photo -->
         <section class ="about_section" aria-labelledby="photo_h3">
             <h3 id="photo_h3" class="about_heading">Meet the Team</h3>
             <figure>
-                <img src="styles/images/TeamPhoto" alt="Group photo of Save the Shrimps Dev Team" width="500">
-                
-         
-   
-                
+                <img src="styles/images/Screenshot 2025-09-24 at 5.44.08 pm.png" alt="Group photo of Save the Shrimps Dev Team" width="500">
                 <figcaption>The Save the Shrimps Team</figcaption>
-
             </figure>
         </section>
-        
 
-        <!-- Fun facts table -->
-        <section class ="about_section" aria-labelledby="fun_h3">
-            <h3 id="fun_h3" class="about_heading">Fun Facts About Us</h3>
-            <table>
-                <caption>Team Fun Facts</caption>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Dream Job</th>
-                        <th>Favourite Coding Snack</th>
-                        <th>Hometown</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Lachie</td>
-                        <td>Game Designer</td>
-                        <td>Coffee + Donuts</td>
-                        <td>Melbourne</td>
-                    </tr>
-                    <tr>
-                        <td>Jack</td>
-                        <td>Full-Stack Developer</td>
-                        <td>Pizza</td>
-                        <td>Melbourne</td>
-                    </tr>
-                    <tr>
-                        <td>Sammie</td>
-                        <td>UX Researcher</td>
-                        <td>Chocolate</td>
-                        <td>Melbourne</td>
-                    </tr>
-                    <tr>
-                        <td>Vethum</td>
-                        <td>Software Engineer</td>
-                        <td>Energy Drinks</td>
-                        <td>Melbourne</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+    <!-- Fun facts table -->
+    <section class="about_section">
+      <h3 id="fun_h3" class="about_heading">Fun Facts About Us</h3>
+      <table>
+        <caption>Team Fun Facts</caption>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Dream Job</th>
+            <th>Favourite Coding Snack</th>
+            <th>Hometown</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Lachie</td>
+            <td>Game Designer</td>
+            <td>Coffee + Donuts</td>
+            <td>Melbourne</td>
+          </tr>
+          <tr>
+            <td>Jack</td>
+            <td>Full-Stack Developer</td>
+            <td>Pizza</td>
+            <td>Melbourne</td>
+          </tr>
+          <tr>
+            <td>Sammie</td>
+            <td>UX Researcher</td>
+            <td>Chocolate</td>
+            <td>Melbourne</td>
+          </tr>
+          <tr>
+            <td>Vethum</td>
+            <td>Software Engineer</td>
+            <td>Energy Drinks</td>
+            <td>Melbourne</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
 
-        <!-- Contact info -->
-        <aside id="about_aside">
-            <p style="font-style: italic;">
-                <strong>Note:</strong> This is a student project for Swinburne.  
-                For inquiries, contact us at <a href="mailto:savetheshrimps@project.com">savetheshrimps@project.com</a>.
-            </p>
-        </aside>
-    </main>
+    <!-- Contact info -->
+    <aside id="about_aside">
+      <p style="font-style: italic;">
+        <strong>Note:</strong> This is a student project for Swinburne.  
+        For inquiries, contact us at 
+        <a href="mailto:savetheshrimps@project.com">savetheshrimps@project.com</a>.
+      </p>
+    </aside>
+  </main>
 
-    <!-- Shared footer -->
-    <footer>
-        <p>&copy; 2025 Save the Shrimps | <a href="https://github.com/your-repo" target="_blank">GitHub</a> | 
-        <a href="https://jira.company.com" target="_blank">Jira</a></p>
-    </footer>
+  <!-- Shared footer -->
+  <footer>
+    <p>&copy; 2025 Save the Shrimps |
+      <a href="https://github.com/your-repo" target="_blank">GitHub</a> |
+      <a href="https://jira.company.com" target="_blank">Jira</a>
+    </p>
+  </footer>
 </body>
 </html>
