@@ -13,6 +13,7 @@
         <title>Form Results</title>
 </head>
 <body>
+    <!-- include header and nv elements -->
     <?php
     include('header.inc');
     include('nav.inc');
@@ -171,6 +172,7 @@ $conn = @mysqli_connect($host, $user, $pwd, $sql_db);
 </tbody>
 </table>
 </section>
+<!-- include footer element -->
 <?php
     include('footer.inc');
 ?>
