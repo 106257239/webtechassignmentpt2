@@ -21,30 +21,30 @@
         If you're eager to begin working with us, please fill the form out below
     </h3>
 <!-- Main form  -->
-    <form action="https://mercury.swin.edu.au/it000000/formtest.php" method="post" class="form-grid">
+    <form action="process_eoi.php" method="post" class="form-grid">
         <!-- Fieldset that covers the job reference number found on the jobs page-->
             <fieldset>
                 <legend>Job Information</legend>
                 <label for="job_reference">Reference Number (found on jobs page):</label>
-                <input type="text" id="job_reference" name="job_reference" required maxlength="5">
+                <input type="text" id="job_reference" name="job_reference">
             </fieldset>
         <!-- fieldset that gathers basic information from the applicant-->
             <fieldset>
                 <legend>Personal Information</legend>
                 <label for="first_name">First Name:</label>
-                <input type="text" id="first_name" name="first_name" required maxlength="20"><br>
+                <input type="text" id="first_name" name="first_name"><br>
                 <label for="last_name">Last Name:</label>
-                <input type="text" id="last_name" name="last_name" required maxlength="20"><br>
+                <input type="text" id="last_name" name="last_name"><br>
 
                 <label for="DOB">Date of Birth:</label>
-                <input type="date" id="DOB" name="DOB" required><br>
+                <input type="date" id="DOB" name="DOB" ><br>
 
                 Gender:
-                <input type="radio" id="male" name="gender" value="male" required>
+                <input type="radio" id="male" name="gender" value="male">
                 <label for="gender">Male</label>
-                <input type="radio" id="Female" name="gender" value="female" required>
+                <input type="radio" id="Female" name="gender" value="female">
                 <label for="gender">Female</label>
-                <input type="radio" id="Prefer" name="gender" value="Prefer not to say" required>
+                <input type="radio" id="Prefer" name="gender" value="Prefer not to say">
                 <label for="Prefer">Prefer not to say</label>
             </fieldset>
         
@@ -52,17 +52,17 @@
             <fieldset>
                 <legend>Contact Information</legend>
                 <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required maxlength="40"><br>    
+                <input type="email" id="email" name="email"><br>    
                 <label for="phone">Phone Number:</label>
-                <input type="tel" id="phone" name="phone" required maxlength="15"><br>
+                <input type="tel" id="phone" name="phone"><br>
                 <label for="address">Street Address:</label>
-                <input type="text" id="address" name="address" required maxlength="40"><br>
+                <input type="text" id="address" name="address" ><br>
                 <label for="suburb">Suburb:</label> 
-                <input type="text" id="suburb" name="suburb" required maxlength="20"><br>
+                <input type="text" id="suburb" name="suburb"><br>
                 <label for="postcode">Postcode:</label>
-                <input type="text" id="postcode" name="postcode" required maxlength="4"><br>
+                <input type="text" id="postcode" name="postcode"><br>
                 <label for="state">State:</label>
-                <select id="state" name="state" required>
+                <select id="state" name="state" >
                     <option value="">Select your state</option>
                     <option value="VIC">VIC</option>
                     <option value="NSW">NSW</option>
@@ -77,17 +77,17 @@
 
         <!-- fieldset that covers the relevant skills of the applicant-->
         <div class="Skills"></div>
-            <fieldset>
+            <fieldset >
                 <legend>Relevant skills</legend>
-                <input type="checkbox" id="Frontend" name="Frontend" value="Frontend" required>
-                <label for="Frontend">Frontend Development</label>
-                <input type="checkbox" id="Backend" name="Backend" value="Backend" required> 
-                <label for="Backend">Backend Development</label><br>
-                <input type="checkbox" id="Database" name="Database" value="Database" required>
-                <label for="Database">Database Management</label>
-                <input type="checkbox" id="dataanalysis" name="dataanalysis" value="dataanalysis" required>
+                <input type="checkbox" id="frontend" name="skill[]" value="frontend">
+                <label for="frontend">Frontend Development</label>
+                <input type="checkbox" id="backend" name="skill[]" value="backend"> 
+                <label for="backend">Backend Development</label><br>
+                <input type="checkbox" id="database" name="skill[]" value="database">
+                <label for="database">Database Management</label>
+                <input type="checkbox" id="dataanalysis" name="skill[]" value="dataanalysis">
                 <label for="dataanalysis">Data Analysis</label><br>
-                <input type="checkbox" id="projectmanagement" name="projectmanagement" value="projectmanagement" required>
+                <input type="checkbox" id="projectmanagement" name="skill[]" value="projectmanagement">
                 <label for="projectmanagement">Project Management</label><br><br>
                 <label for="other_skills">Other skills:</label><br>
                 <textarea id="other_skills" name="other_skills"> </textarea>
