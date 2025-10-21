@@ -126,7 +126,7 @@ $conn = @mysqli_connect($host, $user, $pwd, $sql_db);
     }   
 // table creation 
     ?>
-    <section class="job_pos">
+    <section class="job_headings">
     <table>
         <caption><h2 style= "font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Your Application<h2></caption>
         <thead>
