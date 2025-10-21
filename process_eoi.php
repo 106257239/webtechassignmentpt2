@@ -36,11 +36,14 @@
         <!--end of nav section-->
     <h2 class="job_headings" id="job_h2"> Your Application has been submitted<h2>
 <?php
+// redirect if coming from wrong method
 if ($_SERVER["REQUEST_METHOD"] != "POST") {
     header( 'Location: /webtechassignmentpt2/apply.html' ) ;}
 ?>
+
 <?php
-// retrieve from post method form data and assign to variable 
+// retrieve from post method form data and assign to variable as well as sanatise data
+print_r($_POST);
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $job_reference = trim($_POST['job_reference']);
         $firstname = sanitise_data($_POST ['first_name']);
@@ -53,19 +56,47 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $suburb = sanitise_data($_POST['suburb']);
         $postcode = sanitise_data($_POST['postcode']);
         $state = sanitise_data($_POST['state']);
-        $frontend= sanitise_data($_POST['Frontend']);
+        $frontend = isset($_POST['skill']) ? implode( ",",array_map('sanitise_data', $_POST["skill"])) : "";
         $otherskills = sanitise_data($_POST['other_skills']);
-        // retrieve required information for connection
+        // check formatting of data and if incorrect display error
+        if (!preg_match("/^\w{5}$/",$job_reference)) $errors[] = "5 digit Job Reference Number is required.";
+        if (!preg_match("/^\w{1,20}$/",$firstname)) $errors[] = "First Name(1-20 Characters) is required.";
+        if (!preg_match("/^\w{1,20}$/",$lastname)) $errors[] = "Last Name (1-20 Characters) is required.";
+        if (empty($dob)) $errors[] = "Date of Birth is required.";
+        if (empty($gender)) $errors[] = "Gender is required.";
+        if (!preg_match("/^.{1,50}$/",$email)) $errors[] = "Email (1-50 Characters) is required.";
+        if (!preg_match("/^[0-9]{1,15}$/",$phone)) $errors[] = "Phone number(1-15 Digits) is required.";
+        if (!preg_match("/^.{1,40}$/",$address)) $errors[] = "Address (1-40 Characters) is required."; 
+        if (!preg_match("/^.{1,20}$/",$suburb)) $errors[] = "Suburb (1-20 Characters) is required.";
+        if (!preg_match("/^[0-9]{1,4}$/",$postcode)) $errors[] = "Postcode (1-4 Digits) is required.";
+        if (empty($state)) $errors[] = "State is required.";
+        if (empty($frontend)) $errors[] = "Skills are required.";
+        if (empty($otherskills)) $errors[] = "Other Skills are required.";
+        // if (empty($errors)) {
+            // Display all error messages
+            if (!empty($errors)) {
+                // Show errors, do NOT insert into DB
+                foreach ($errors as $error) {
+                    echo "<p style='color:red;'>" . htmlspecialchars($error) . "</p>";
+                    echo "<p><strong>Please go back and fix the errors.</strong></p>";}
+                }               
+            }
+            // if (!preg_match("/^[0-9]{1}$/", $number)) $errors[] = "Favourite number must be a single digit (0–9).";
+            // if (empty($pets)) $errors[] = "Please select at least one pet.";
+            // if (empty($birthday)) $errors[] = "Birthday is required.";
+// retrieve required information for connection
 require_once('settings.php');
+
 
 // connect to database
 $conn = @mysqli_connect($host, $user, $pwd, $sql_db);
 
-// Check connection status
+// Check connection status used for testing 
 // if (!$conn) {
 //     die("Connection failed: " . mysqli_connect_error());
 // } else {
 //     echo "Connected successfully<br>";}
+
 // create table if table does not exist
     $tablename = "eoi";
     $createTableSQL = "CREATE TABLE IF NOT EXISTS $tablename (
@@ -81,44 +112,49 @@ $conn = @mysqli_connect($host, $user, $pwd, $sql_db);
         suburb VARCHAR(20) NOT NULL,
         postcode INT(4) NOT NULL,
         state ENUM('vic','nsw','qld','nt','wa','sa','tas','act') NOT NULL,
-        skills SET('frontend','backend','database','dataanalysis','projectmanagement') NOT NULL,
+        skills SET('frontend','backend','database','dataanalysis','projectmanagement'),
         otherskills TEXT NOT NULL,
         status ENUM('New','Current','Final') NOT NULL DEFAULT 'New',
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         PRIMARY KEY (id)
     ) ENGINE=InnoDB;";
+
 // error handeling for table creation 
     if (!mysqli_query($conn, $createTableSQL)) {
-        die(" Error creating table: " . mysqli_error($conn));
-    } else {
-        // echo " Table '$tablename' ready.<br>";
-    }
+        die(" Error creating table: " . mysqli_error($conn));}
+    else{
+    
 
 
 //insert data from variables in to eoi table 
     $stmt = $conn->prepare  ("INSERT INTO `eoi` (`id`, `reference_no`, `firstname`, `lastname`, `dob`, `gender`, `email`,`phone`, `address`, `suburb`, `postcode`, `state`, `skills`, `otherskills`, `status`)
-        VALUES (Null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 1 );");
+        VALUES (Null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'New' );");
     $stmt->bind_param("sssssssssssss",  $job_reference,$firstname,$lastname,$dob,$gender,$email,$phone,$address,$suburb,$postcode,$state,$frontend,$otherskills);
     $stmt->execute();
     $results = $stmt->get_result();
-    // echo if results where successful
+    
+    // echo if results where successful used for debugging
     // if ($stmt) {
     //     echo "New record created successfully";
     // } else {
-    //     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    //     echo "Error: " . $sql . "<br>" . mysqli_error($conn); 
     // }
-// close sql connections 
+
+    // close sql connections 
     mysqli_close($conn);
+    }   
+// table creation 
     ?>
     <section class="job_pos">
     <table>
-        <caption><h2>Your Application<h2></caption>
+        <caption><h2 class="job_headings">Your Application<h2></caption>
         <thead>
             <tr>
                 <th>Field</th>
                 <th>Answer</th>
             </tr>
         </thead>
+
 <?php
         $jobnum = rand();
         // variable displaying
@@ -145,16 +181,17 @@ $conn = @mysqli_connect($host, $user, $pwd, $sql_db);
             // echo $postcode. "<br>";
             // echo $state. "<br>";
             echo "<tr><td>Skills</td>";
-            echo "<td>". $frontend." ". $otherskills. "</td></tr>";
+            echo "<td>". $frontend.", ". $otherskills. "</td></tr>";
             // echo $otherskills. "<br>";
-        }
-    //Data sanatising 
+        
+    //Data sanatising function
     function sanitise_data($data) {
         $data = trim($data);                 
         $data = htmlspecialchars($data);
         $data = stripslashes($data);       
     return $data;
-}
+    }
+
 ?>
 </tbody>
 </table>

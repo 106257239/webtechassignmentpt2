@@ -16,7 +16,7 @@ header a
 header
     {display:flex;
     justify-content: space-between;
-    border: black .4em solid;
+    border: black 2px solid;
     border-radius:10%;
     background-color: #ffcf76;}
 /*nav styling*/
@@ -32,13 +32,13 @@ nav ul
     display:flex;
     flex-wrap: nowrap;
     justify-content: space-evenly;
-    border: 5px black solid;
+    border: 2px black solid;
     border-radius:10%;
     background-color: #ffcf76;}
 nav ul li
     {display: inline;
-    border-left: 5px black solid;
-    border-right: 5px black solid;
+    border-left: 2px black solid;
+    border-right: 2px black solid;
     padding-top: 1%;
     padding-bottom: 1%;
     padding-left: 2%;
@@ -70,8 +70,8 @@ footer {
 .job_headings
     {font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     text-align:center;
-    border: black .2em solid;
-    border-radius:30%;
+    border: black 2px solid;
+    border-radius:1%;
     background-color: #ffcf76;
     margin-bottom: 1%;
     margin-top: 1%;}
@@ -86,20 +86,20 @@ footer {
 /*jobs listing styling*/
 .job_pos
     {width:66%;
-    border: black 1px solid;
+    border: black 2px solid;
     border-radius:10%;
     margin: 1%;
     margin-bottom: .2 em;
     padding-bottom: 3%;}
 /* job title styling*/
 .job_title
-    {text-align: left;
+    {text-align: center;
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: .2em; 
+    font-size: 2em; 
     color: black;
     font-weight: bold;
     width: 66%;
-    margin-left: 25%;
+    margin-left: 17%;
     }
 /*job link styling*/
 .job_ul{
@@ -130,7 +130,7 @@ footer {
     /* end of job page css*/
     #job_apply_sec
     {width:66%;
-    border: black .2em solid;
+    border: black 2px solid;
     background-color: #ffcf76;
     border-radius:10%;
     margin: 1%;
@@ -145,7 +145,7 @@ footer {
       margin-right: 35%;
       margin-bottom: 1%;
       margin-top: 1%;
-      border: 5px black solid;
+      border: 2px black solid;
       border-radius:10%;
       padding-top: .02%;
       padding-bottom: .05%;
