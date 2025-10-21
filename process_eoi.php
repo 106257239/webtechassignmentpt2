@@ -1,21 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="apply page of the job application website">
-    <meta name="keywords" content="apply, , assignment">
-    <meta name="author" content="Lachie Colville">
-    <link href="styles/style.css"rel= "stylesheet">
-    <link rel="icon" type="image/x-icon" href="styles/images/shrimp.jpg">
-    <title>Volunteer with us!</title>
-</head>
-<body>
-<!-- header and nav which includes title of the webpage and the logo for our company-->
-<?php
-    include('header.inc');
-    include('nav.inc');
-?>
 
     <h3>
         If you're eager to begin working with us, please fill the form out below
@@ -100,8 +82,3 @@
         </div>
     </form>
     <!-- Footer that is the same across all pages-->
-<?php
-    include('footer.inc');
-?>
-</body>
-</html>
