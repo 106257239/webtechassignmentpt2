@@ -164,14 +164,6 @@
   }
 ?>
       </table>
-    <!-- Contact info -->
-    <aside id="about_aside">
-      <p style="font-style: italic;">
-        <strong>Note:</strong> This is a student project for Swinburne.  
-        For inquiries, contact us at 
-        <a href="mailto:savetheshrimps@project.com">savetheshrimps@project.com</a>.
-      </p>
-    </aside>
   </main>
 
   <!-- Shared footer -->
