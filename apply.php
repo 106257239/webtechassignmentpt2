@@ -9,6 +9,10 @@
     <link href="styles/style.css"rel= "stylesheet">
     <link rel="icon" type="image/x-icon" href="styles/images/shrimp.jpg">
     <title>Volunteer with us!</title>
+    <style>
+        legend
+        {font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;}
+    </style>
 </head>
 <body>
 <!-- header and nav which includes title of the webpage and the logo for our company-->
@@ -89,14 +93,15 @@
                 <label for="dataanalysis">Data Analysis</label><br>
                 <input type="checkbox" id="projectmanagement" name="skill[]" value="projectmanagement">
                 <label for="projectmanagement">Project Management</label><br><br>
-                <label for="other_skills">Other skills:</label><br>
+                <label for="other_skills"><input type= "checkbox" for="other_skills" name = "yes_other" value="yes">Other skills:</label><br>
+                
                 <textarea id="other_skills" name="other_skills"> </textarea>
             </fieldset>
         </div>
         <!-- submission and reset buttons for the form-->
         <div class="form-buttons">
             <input type="submit" value="Submit application">
-            <input type="reset" value="Reset form">
+            <input type="reset" value="Reset form" style="background-color: azure;">
         </div>
     </form>
     <!-- Footer that is the same across all pages-->
