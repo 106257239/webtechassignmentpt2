@@ -41,7 +41,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $postcode = sanitise_data($_POST['postcode']);
         $state = sanitise_data($_POST['state']);
         $frontend = isset($_POST['skill']) ? implode( ",",array_map('sanitise_data', $_POST["skill"])) : "";
-        $otherskills = sanitise_data($_POST['other_skills']);
+        $yes_other = sanitise_data($_POST["yes_other"]);
+        if ($yes_other != NULL)
+            {$otherskills = sanitise_data($_POST['other_skills']);}
         // check formatting of data and if incorrect display error
         if (!preg_match("/^\w{5}$/",$job_reference)) $errors[] = "5 digit Job Reference Number is required.";
         if (!preg_match("/^\w{1,20}$/",$firstname)) $errors[] = "First Name(1-20 Characters) is required.";
@@ -55,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (!preg_match("/^[0-9]{1,4}$/",$postcode)) $errors[] = "Postcode (1-4 Digits) is required.";
         if (empty($state)) $errors[] = "State is required.";
         if (empty($frontend)) $errors[] = "Skills are required.";
-        if (empty($otherskills)) $errors[] = "Other Skills are required.";
+        // if (empty($otherskills)) $errors[] = "Other Skills are required.";
         // if (empty($errors)) {
             // Display all error messages
             if (!empty($errors)) {
@@ -94,7 +96,7 @@ $conn = @mysqli_connect($host, $user, $pwd, $sql_db);
         postcode INT(4) NOT NULL,
         state ENUM('vic','nsw','qld','nt','wa','sa','tas','act') NOT NULL,
         skills SET('frontend','backend','database','dataanalysis','projectmanagement'),
-        otherskills TEXT NOT NULL,
+        otherskills TEXT ,
         status ENUM('New','Current','Final') NOT NULL DEFAULT 'New',
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         PRIMARY KEY (id)
