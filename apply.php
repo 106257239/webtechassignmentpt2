@@ -21,9 +21,9 @@
     include('nav.inc');
 ?>
 
-    <h3>
+    <h2>
         If you're eager to begin working with us, please fill the form out below
-    </h3>
+    </h2>
 <!-- Main form  -->
     <form action="process_eoi.php" method="post" class="form-grid">
         <!-- Fieldset that covers the job reference number found on the jobs page-->
@@ -44,12 +44,15 @@
                 <input type="date" id="DOB" name="DOB" ><br>
 
                 Gender:
-                <input type="radio" id="male" name="gender" value="male">
-                <label for="gender">Male</label>
-                <input type="radio" id="Female" name="gender" value="female">
-                <label for="gender">Female</label>
-                <input type="radio" id="Prefer" name="gender" value="Prefer not to say">
-                <label for="Prefer">Prefer not to say</label>
+                <label>
+                    <input type="radio" id="male" name="gender" value="male">
+                Male</label>
+                <label>
+                        <input type="radio" id="Female" name="gender" value="female">
+                Female</label>
+                <label>
+                    <input type="radio" id="Prefer" name="gender" value="Prefer not to say">
+                Prefer not to say</label>
             </fieldset>
         
         <!-- fieldset that covers the contact information from the applicant-->
@@ -93,9 +96,11 @@
                 <label for="dataanalysis">Data Analysis</label><br>
                 <input type="checkbox" id="projectmanagement" name="skill[]" value="projectmanagement">
                 <label for="projectmanagement">Project Management</label><br><br>
-                <label for="other_skills"><input type= "checkbox" for="other_skills" name = "yes_other" value="yes">Other skills:</label><br>
-                
-                <textarea id="other_skills" name="other_skills"> </textarea>
+                <label>
+                    <input type= "checkbox" for="other_skills" name = "yes_other" value="yes">Other skills:</label><br>
+                <label for= "other_skills"> Type Here:<br>
+                    <textarea id="other_skills" name="other_skills"> </textarea>
+                </label>
             </fieldset>
         </div>
         <!-- submission and reset buttons for the form-->
