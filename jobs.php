@@ -1,4 +1,4 @@
-<!DOCTYPE php >
+<DOCTYPE php >
 <html lang="en">
     <head>
         <!--META TAGS-->
