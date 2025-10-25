@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vethum Team Project 2</title>
-  <link rel="stylesheet" href="styles/style.css">
-</head>
-<body>
-  <header>
-    <h1>Applied Web Project – Part 2</h1>
-  </header>
+<header>
+    <!-- Logo -->
+    <img src="styles/images/shrimp_no_bg.png" alt="Shrimp Logo" title="Save The Shrimps" id="shrimp">
+
+    <!-- Main site heading -->
+    <h1 id="main_title">Join the Save The Shrimps Team!</h1>
+
+    <!-- Spacer to align flex layout -->
+    <p></p>
+</header>
