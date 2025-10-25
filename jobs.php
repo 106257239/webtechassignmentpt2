@@ -134,3 +134,66 @@
     <!--end of body-->
 </html>
 
+#jobs.php Vethum
+
+<?php
+// Include shared layout and database connection
+include('header.inc');
+include('nav.inc');
+require_once('settings.php');
+
+// Connect to MySQL database
+$conn = @mysqli_connect($host, $user, $pwd, $sql_db);
+
+if (!$conn) {
+    die("<p>Database connection failed: " . mysqli_connect_error() . "</p>");
+}
+
+// SQL query to get all jobs
+$sql = "SELECT * FROM jobs";
+$result = mysqli_query($conn, $sql);
+?>
+
+<main>
+    <section id="job_page" aria-labelledby="job_h2">
+        <h2 id="job_h2" class="job_headings">Current Job Positions</h2>
+    </section>
+
+    <aside id="job_aside">
+        <p style="font-style: italic;">
+            <strong>Note:</strong> Save The Shrimp &copy; is a non-profit organization and all positions are on a volunteer basis.
+        </p>
+    </aside>
+
+    <?php
+    if (mysqli_num_rows($result) > 0) {
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo "<section class='job_pos'>";
+            echo "<a href='apply.php?job_ref={$row['job_ref']}' title='Apply for this job'>";
+            echo "<h4 class='job_title'>{$row['job_title']}</h4></a>";
+            echo "<p class='jobno'>Job No</p>";
+            echo "<p class='job_num'>#{$row['job_ref']}</p>";
+
+            echo "<ul class='job_list'>";
+            echo "<li><strong>Description:</strong><br>{$row['job_description']}</li>";
+            echo "<li><strong>Location:</strong><br>{$row['location']}</li>";
+            echo "<li><strong>Position Type:</strong><br>{$row['position_type']}</li>";
+            echo "<li><strong>Contract Type:</strong><br>{$row['contract_type']}</li>";
+            echo "<li><strong>Salary Range:</strong><br>{$row['salary_range']}</li>";
+            echo "<li><strong>Closing Date:</strong><br>{$row['closing_date']}</li>";
+            echo "<li><strong>Qualifications:</strong><br>{$row['qualifications']}</li>";
+            echo "<li><strong>Responsibilities:</strong><br>{$row['responsibilities']}</li>";
+            echo "</ul>";
+
+            echo "<a href='apply.php?job_ref={$row['job_ref']}' class='apply-btn'>Apply Now</a>";
+            echo "</section><hr>";
+        }
+    } else {
+        echo "<p>No jobs available at the moment.</p>";
+    }
+
+    mysqli_close($conn);
+    ?>
+</main>
+
+<?php include('footer.inc'); ?>

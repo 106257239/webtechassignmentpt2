@@ -38,3 +38,23 @@ footer {
   bottom: 0;
   width: 100%;
 }
+#jobs.php
+.job {
+  background-color: #f9f9f9;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+.job h3 {
+  color: #003366;
+}
+.apply-btn {
+  background: #0066cc;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+.apply-btn:hover {
+  background: #004c99;
+}
