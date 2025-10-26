@@ -370,3 +370,49 @@ legend {
   gap: 1rem;
   padding: 0.5rem 0;
 }
+figure img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+/* >>>>>>> main */
+
+    figure img:hover {
+      transform: scale(1.05);
+    }
+
+    figcaption {
+      margin-top: 10px;
+      font-style: italic;
+      color: #555555;
+      font-size: 0.95rem;
+    }
+
+    table {
+      width: 90%;
+      margin: 20px auto;
+      border-collapse: collapse;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    th, td {
+      border: 1px solid #cccccc;
+      padding: 12px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #005f73;
+      color: #ffffff;
+      font-weight: bold;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f0f0f0;
+    }
+
+    tr:hover {
+      background-color: #dff6ff;
+      transition: 0.3s;
+    }

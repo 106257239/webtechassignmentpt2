@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Oct 21, 2025 at 04:18 AM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Host: localhost
+-- Generation Time: Oct 21, 2025 at 09:21 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,8 +18,44 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `team_contributions`
+-- Database: `webtech_assignment_2`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ahhh`
+--
+
+CREATE TABLE `ahhh` (
+  `id` int(11) NOT NULL,
+  `reference_no` varchar(5) NOT NULL,
+  `firstname` varchar(20) NOT NULL,
+  `lastname` varchar(20) NOT NULL,
+  `dob` date NOT NULL,
+  `gender` enum('Male','Female','prefer_not_to_say') NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `phone` int(15) NOT NULL,
+  `address` varchar(40) NOT NULL,
+  `suburb` varchar(20) NOT NULL,
+  `postcode` int(4) NOT NULL,
+  `state` enum('vic','nsw','qld','nt','wa','sa','tas','act') NOT NULL,
+  `skills` set('frontend','backend','database','dataanalysis','projectmanagement') NOT NULL,
+  `otherskills` text NOT NULL,
+  `status` enum('New','Current','Final') NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `ahhh`
+--
+
+INSERT INTO `ahhh` (`id`, `reference_no`, `firstname`, `lastname`, `dob`, `gender`, `email`, `phone`, `address`, `suburb`, `postcode`, `state`, `skills`, `otherskills`, `status`) VALUES
+(36, '12345', 'Mia', 'Miller', '2000-12-12', 'Female', 'sam.miller@gmail.com', 417709044, '3/1 Rosney Street', 'Hawthorn', 3122, 'vic', 'frontend', '12345678', 'New'),
+(37, '12345', 'Mia', 'Miller', '2000-12-12', 'Female', 'sam.miller@gmail.com', 417709044, '3/1 Rosney Street', 'Hawthorn', 3122, 'vic', 'frontend', '12345678', 'New'),
+(38, '12345', 'Mia', 'Miller', '2000-12-12', 'Female', 'sam.miller@gmail.com', 417709044, '3/1 Rosney Street', 'Hawthorn', 3122, 'vic', 'frontend', '12345678', 'New'),
+(39, '12345', 'Mia', 'Miller', '2000-12-12', 'Female', 'sam.miller@gmail.com', 417709044, '3/1 Rosney Street', 'Hawthorn', 3122, 'vic', 'frontend', '12345678', 'New'),
+(40, '11111', 'Mia', 'Miller', '2000-12-12', 'Female', 'sam.miller@gmail.com', 417709044, '3/1 Rosney Street', 'Hawthorn', 3122, 'vic', 'frontend', '12345', 'New'),
+(41, '11111', 'Mia', 'Miller', '2000-12-12', 'Female', 'sam.miller@gmail.com', 417709044, '3/1 Rosney Street', 'Hawthorn', 3122, 'vic', 'frontend', '12345', 'New');
 
 -- --------------------------------------------------------
 
@@ -43,15 +79,60 @@ INSERT INTO `contributions` (`name`, `pt1`, `pt2`) VALUES
 ('Lachie', 'Apply page', 'Task 5, user table and login'),
 ('Vethum', 'About page', 'Task 6 except user table and login');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `eoi`
+--
+
+CREATE TABLE `eoi` (
+  `id` int(11) NOT NULL,
+  `reference_no` varchar(5) NOT NULL,
+  `firstname` varchar(20) NOT NULL,
+  `lastname` varchar(20) NOT NULL,
+  `dob` date NOT NULL,
+  `gender` enum('Male','Female','prefer_not_to_say') NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `phone` int(15) NOT NULL,
+  `address` varchar(40) NOT NULL,
+  `suburb` varchar(20) NOT NULL,
+  `postcode` int(4) NOT NULL,
+  `state` enum('vic','nsw','qld','nt','wa','sa','tas','act') NOT NULL,
+  `skills` set('frontend','backend','database','dataanalysis','projectmanagement') DEFAULT NULL,
+  `otherskills` text NOT NULL,
+  `status` enum('New','Current','Final') NOT NULL DEFAULT 'New',
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+
 --
 -- Indexes for dumped tables
 --
 
 --
+-- Indexes for table `ahhh`
+--
+
 -- Indexes for table `contributions`
 --
 ALTER TABLE `contributions`
   ADD UNIQUE KEY `name` (`name`) USING HASH;
+
+--
+-- Indexes for table `eoi`
+--
+ALTER TABLE `eoi`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+
+--
+ALTER TABLE `eoi`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -9,6 +9,10 @@
     <link href="styles/style.css"rel= "stylesheet">
     <link rel="icon" type="image/x-icon" href="styles/images/shrimp.jpg">
     <title>Volunteer with us!</title>
+    <style>
+        legend
+        {font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;}
+    </style>
 </head>
 <body>
 <!-- header and nav which includes title of the webpage and the logo for our company-->
@@ -17,9 +21,9 @@
     include('nav.inc');
 ?>
 
-    <h3 style="font-size:2vw">
+    <h2 style="font: size 2vw;">
         If you're eager to begin working with us, please fill the form out below
-    </h3>
+    </h2>
 <!-- Main form  -->
     <form action="process_eoi.php" method="post" class="form-grid">
         <!-- Fieldset that covers the job reference number found on the jobs page-->
@@ -40,12 +44,15 @@
                 <input type="date" id="DOB" name="DOB" ><br>
 
                 Gender:
-                <input type="radio" id="male" name="gender" value="male">
-                <label for="gender">Male</label>
-                <input type="radio" id="Female" name="gender" value="female">
-                <label for="gender">Female</label>
-                <input type="radio" id="Prefer" name="gender" value="Prefer not to say">
-                <label for="Prefer">Prefer not to say</label>
+                <label>
+                    <input type="radio" id="male" name="gender" value="male">
+                Male</label>
+                <label>
+                        <input type="radio" id="Female" name="gender" value="female">
+                Female</label>
+                <label>
+                    <input type="radio" id="Prefer" name="gender" value="Prefer not to say">
+                Prefer not to say</label>
             </fieldset>
         
         <!-- fieldset that covers the contact information from the applicant-->
@@ -89,14 +96,17 @@
                 <label for="dataanalysis">Data Analysis</label><br>
                 <input type="checkbox" id="projectmanagement" name="skill[]" value="projectmanagement">
                 <label for="projectmanagement">Project Management</label><br><br>
-                <label for="other_skills">Other skills:</label><br>
-                <textarea id="other_skills" name="other_skills"> </textarea>
+                <label>
+                    <input type= "checkbox" for="other_skills" name = "yes_other" value="yes">Other skills:</label><br>
+                <label for= "other_skills"> Type Here:<br>
+                    <textarea id="other_skills" name="other_skills"> </textarea>
+                </label>
             </fieldset>
         </div>
         <!-- submission and reset buttons for the form-->
         <div class="form-buttons">
             <input type="submit" value="Submit application" style="font-size:1.5vw">
-            <input type="reset" value="Reset form" style="font-size:1.5vw">
+            <input type="reset" value="Reset form" style="background-color: azure;" style="font-size:1.5vw">
         </div>
     </form>
     <!-- Footer that is the same across all pages-->

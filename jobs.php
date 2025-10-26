@@ -130,7 +130,7 @@
             <!-- apply now button to go to apply section -->
             </section>
             <section id="job_apply_sec">
-            <a          href="apply.html"
+            <a          href="apply.php"
                         target="_blank"
                         title="Go to Apply form"
                         hreflang="en"
