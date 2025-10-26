@@ -2,12 +2,13 @@
 session_start();
 require_once('settings.php');
 
-// redirect to login if not logged in
+// Redirect to login if not authenticated
 if (!isset($_SESSION['loggedin'])) {
   header("Location: login.php");
   exit;
 }
 
+// Connect to DB
 $conn = @mysqli_connect($host, $user, $pwd, $sql_db);
 if (!$conn) {
   die("<p>❌ Database connection failed: " . mysqli_connect_error() . "</p>");
@@ -17,62 +18,12 @@ if (!$conn) {
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Manage EOIs</title>
-<style>
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  background-color: #f8f9fa;
-}
-header {
-  background-color: #2c3e50;
-  color: white;
-  padding: 1rem;
-  text-align: center;
-}
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  background-color: #34495e;
-  overflow: hidden;
-}
-nav li { display: inline-block; }
-nav a {
-  color: white;
-  text-decoration: none;
-  padding: 14px 16px;
-  display: block;
-}
-nav a:hover { background-color: #1abc9c; }
-main {
-  padding: 20px;
-}
-fieldset {
-  background-color: white;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  margin-bottom: 20px;
-  padding: 15px;
-}
-table {
-  border-collapse: collapse;
-  width: 100%;
-  margin-top: 20px;
-}
-th, td {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
-}
-th {
-  background-color: #2c3e50;
-  color: white;
-}
-</style>
+<link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-<header><h1>Manage EOIs – Save The Shrimps</h1></header>
+<header><h1>     Save The Shrimps  </h1></header>
 <nav>
   <ul>
     <li><a href="index.php">Home</a></li>
@@ -81,11 +32,11 @@ th {
   </ul>
 </nav>
 <main>
-  <h2>HR Manager Panel</h2>
+  <h2>HR Manager – Manage EOIs</h2>
 
   <form method="post" action="manage.php">
     <fieldset>
-      <legend>List or Search EOIs</legend>
+      <legend>List / Search EOIs</legend>
       <label><input type="radio" name="action" value="list_all"> List all EOIs</label><br>
       <label><input type="radio" name="action" value="search_job"> Search by Job Reference:</label>
       <input type="text" name="job_ref"><br>
@@ -96,7 +47,7 @@ th {
 
     <fieldset>
       <legend>Delete EOIs by Job Reference</legend>
-      <input type="text" name="delete_job_ref" placeholder="Enter Job Reference">
+      <input type="text" name="delete_job_ref" placeholder="Enter Job Ref">
       <button type="submit" name="action" value="delete_job">Delete</button>
     </fieldset>
 
@@ -122,50 +73,51 @@ th {
       </select>
       <button type="submit" name="action" value="sort_results">Sort</button>
     </fieldset>
+
     <button type="submit">Submit</button>
   </form>
 
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $action = $_POST['action'] ?? '';
   $result = null;
 
   switch ($action) {
-    case "list_all":
+    case 'list_all':
       $query = "SELECT * FROM eoi";
       $result = mysqli_query($conn, $query);
       break;
-    case "search_job":
+    case 'search_job':
       $job_ref = mysqli_real_escape_string($conn, $_POST['job_ref']);
       $query = "SELECT * FROM eoi WHERE job_ref = '$job_ref'";
       $result = mysqli_query($conn, $query);
       break;
-    case "search_name":
+    case 'search_name':
       $first = mysqli_real_escape_string($conn, $_POST['first_name']);
       $last  = mysqli_real_escape_string($conn, $_POST['last_name']);
       $query = "SELECT * FROM eoi WHERE first_name LIKE '%$first%' OR last_name LIKE '%$last%'";
       $result = mysqli_query($conn, $query);
       break;
-    case "delete_job":
+    case 'delete_job':
       $del_ref = mysqli_real_escape_string($conn, $_POST['delete_job_ref']);
       $query = "DELETE FROM eoi WHERE job_ref = '$del_ref'";
-      if (mysqli_query($conn, $query)) echo "<p>✅ EOIs for job $del_ref deleted.</p>";
+      if (mysqli_query($conn, $query)) echo "<p>✅ EOIs for Job $del_ref deleted.</p>";
       break;
-    case "update_status":
+    case 'update_status':
       $eoi_no = mysqli_real_escape_string($conn, $_POST['eoi_number']);
       $status = mysqli_real_escape_string($conn, $_POST['new_status']);
-      $query = "UPDATE eoi SET status = '$status' WHERE EOInumber = '$eoi_no'";
+      $query = "UPDATE eoi SET status='$status' WHERE EOInumber='$eoi_no'";
       if (mysqli_query($conn, $query)) echo "<p>✅ EOI $eoi_no updated to $status.</p>";
       break;
-    case "sort_results":
-      $sort = mysqli_real_escape_string($conn, $_POST['sort_field']);
-      $query = "SELECT * FROM eoi ORDER BY $sort ASC";
+    case 'sort_results':
+      $sort_field = mysqli_real_escape_string($conn, $_POST['sort_field']);
+      $query = "SELECT * FROM eoi ORDER BY $sort_field ASC";
       $result = mysqli_query($conn, $query);
       break;
   }
 
   if ($result && mysqli_num_rows($result) > 0) {
-    echo "<table><tr>
+    echo "<table border='1'><tr>
             <th>EOI#</th><th>Job Ref</th><th>First Name</th><th>Last Name</th>
             <th>Email</th><th>Status</th></tr>";
     while ($row = mysqli_fetch_assoc($result)) {
