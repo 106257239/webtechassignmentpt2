@@ -1,35 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="apply page of the job application website">
-    <meta name="keywords" content="apply, , assignment">
-    <meta name="author" content="Lachie Colville">
-    <link href="styles/style.css"rel= "stylesheet">
-    <link rel="icon" type="image/x-icon" href="styles/images/shrimp.jpg">
-    <title>Volunteer with us!</title>
-</head>
-<body>
-<!-- header and nav which includes title of the webpage and the logo for our company-->
-<?php
-    include('header.inc');
-    include('nav.inc');
-?>
 
-    <h3 style="font-size:2vw">
+    <h3>
         If you're eager to begin working with us, please fill the form out below
     </h3>
 <!-- Main form  -->
     <form action="process_eoi.php" method="post" class="form-grid">
         <!-- Fieldset that covers the job reference number found on the jobs page-->
-            <fieldset style="font-size:1.5vw">
+            <fieldset>
                 <legend>Job Information</legend>
                 <label for="job_reference">Reference Number (found on jobs page):</label>
                 <input type="text" id="job_reference" name="job_reference">
             </fieldset>
         <!-- fieldset that gathers basic information from the applicant-->
-            <fieldset style="font-size:1.5vw">
+            <fieldset>
                 <legend>Personal Information</legend>
                 <label for="first_name">First Name:</label>
                 <input type="text" id="first_name" name="first_name"><br>
@@ -49,7 +31,7 @@
             </fieldset>
         
         <!-- fieldset that covers the contact information from the applicant-->
-            <fieldset style="font-size:1.5vw">
+            <fieldset>
                 <legend>Contact Information</legend>
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email"><br>    
@@ -77,7 +59,7 @@
 
         <!-- fieldset that covers the relevant skills of the applicant-->
         <div class="Skills"></div>
-            <fieldset style="font-size:1.5vw">
+            <fieldset >
                 <legend>Relevant skills</legend>
                 <input type="checkbox" id="frontend" name="skill[]" value="frontend">
                 <label for="frontend">Frontend Development</label>
@@ -95,13 +77,8 @@
         </div>
         <!-- submission and reset buttons for the form-->
         <div class="form-buttons">
-            <input type="submit" value="Submit application" style="font-size:1.5vw">
-            <input type="reset" value="Reset form" style="font-size:1.5vw">
+            <input type="submit" value="Submit application">
+            <input type="reset" value="Reset form">
         </div>
     </form>
     <!-- Footer that is the same across all pages-->
-<?php
-    include('footer.inc');
-?>
-</body>
-</html>
