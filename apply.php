@@ -17,19 +17,19 @@
     include('nav.inc');
 ?>
 
-    <h3>
+    <h3 style="font-size:2vw">
         If you're eager to begin working with us, please fill the form out below
     </h3>
 <!-- Main form  -->
     <form action="https://mercury.swin.edu.au/it000000/formtest.php" method="post" class="form-grid">
         <!-- Fieldset that covers the job reference number found on the jobs page-->
-            <fieldset>
+            <fieldset style="font-size:1.5vw">
                 <legend>Job Information</legend>
                 <label for="job_reference">Reference Number (found on jobs page):</label>
                 <input type="text" id="job_reference" name="job_reference" required maxlength="5">
             </fieldset>
         <!-- fieldset that gathers basic information from the applicant-->
-            <fieldset>
+            <fieldset style="font-size:1.5vw">
                 <legend>Personal Information</legend>
                 <label for="first_name">First Name:</label>
                 <input type="text" id="first_name" name="first_name" required maxlength="20"><br>
@@ -49,7 +49,7 @@
             </fieldset>
         
         <!-- fieldset that covers the contact information from the applicant-->
-            <fieldset>
+            <fieldset style="font-size:1.5vw">
                 <legend>Contact Information</legend>
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required maxlength="40"><br>    
@@ -77,7 +77,7 @@
 
         <!-- fieldset that covers the relevant skills of the applicant-->
         <div class="Skills"></div>
-            <fieldset>
+            <fieldset style="font-size:1.5vw">
                 <legend>Relevant skills</legend>
                 <input type="checkbox" id="Frontend" name="Frontend" value="Frontend" required>
                 <label for="Frontend">Frontend Development</label>
@@ -95,8 +95,8 @@
         </div>
         <!-- submission and reset buttons for the form-->
         <div class="form-buttons">
-            <input type="submit" value="Submit application">
-            <input type="reset" value="Reset form">
+            <input type="submit" value="Submit application" style="font-size:1.5vw">
+            <input type="reset" value="Reset form" style="font-size:1.5vw">
         </div>
     </form>
     <!-- Footer that is the same across all pages-->
