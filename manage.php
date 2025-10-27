@@ -21,9 +21,8 @@ if (!$conn) {
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Manage EOIs</title>
 
-<link rel="stylesheet" href="styles/newstyles.css">
+<!-- Load your main site CSS first -->
 <link rel="stylesheet" href="styles/style.css">
-
 
 </head>
 <body>
