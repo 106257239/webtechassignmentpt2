@@ -9,6 +9,7 @@
                 <li style="font-size:2vw"><a href="./about.php" target="_self" title="About Page" hreflang="english">About Us</a></li>
                 <li style="font-size:2vw"><a href="./jobs.php" target="_self" title="Jobs Page" hreflang="english">Jobs</a></li>
                 <li style="font-size:2vw"><a href="./apply.php" target="_self" title="Apply page" hreflang="english">Volunteer</a></li>
+                    <li><a href="manage.php" title="manage page" hreflang="english">login </a></li>
             </ul>
         </nav>
     </body>
