@@ -74,6 +74,8 @@ if (!$conn) {
     </fieldset>
 
     <button type="submit">Submit</button>
+    <button type="Logout"><a href="logout.php">Logout</a></button>
+
   </form>
 
 <?php

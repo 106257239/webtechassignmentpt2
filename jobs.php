@@ -74,7 +74,7 @@ $result = mysqli_query($conn, $sql);
           echo "<li><strong>Closing Date:</strong> {$row['closing_date']}</li>";
           echo "<li><strong>Qualifications:</strong> {$row['qualifications']}</li>";
           echo "<li><strong>Responsibilities:</strong> {$row['responsibilities']}</li>";
-          echo "</ul>"
+          echo "</ul>";
           echo "</section><hr>";
       }
   } else {
