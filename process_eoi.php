@@ -14,7 +14,7 @@
     </head>
 
     <body>
-        <!-- include header and nv elements -->
+        <!-- include header and nav elements -->
         <?php
             include('header.inc');
             include('nav.inc');
@@ -80,6 +80,7 @@
     //     echo "Connected successfully<br>";}
 
     // create table if table does not exist
+    // assitance of chat gpt to correct syntax errors 
             $tablename = "eoi";
             $createTableSQL = "CREATE TABLE IF NOT EXISTS $tablename (
                 id INT(11) NOT NULL AUTO_INCREMENT,
@@ -170,6 +171,7 @@
         }
 
         ?>
+        <!-- table ending elements  -->
                 </tbody>
             </table>
         </section>
