@@ -7,7 +7,7 @@ require_once('settings.php');
 // Connect to database
 $conn = @mysqli_connect($host, $user, $pwd, $sql_db);
 if (!$conn) {
-  die("<p>❌ Database connection failed: " . mysqli_connect_error() . "</p>");
+  die("<p> Database connection failed: " . mysqli_connect_error() . "</p>");
 }
 
 $error = "";

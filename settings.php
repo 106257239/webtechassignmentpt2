@@ -1,6 +1,6 @@
 <?php
-$host = "localhost";
-$user = "root";       // default for XAMPP
-$pwd = "";            // leave blank unless you set one
-$sql_db = "project2_db";  // must match your phpMyAdmin database name
+$host = "localhost";               // XAMPP server
+$user = "root";                    // default username for XAMPP
+$pwd  = "";                        // leave empty unless you set a MySQL password
+$sql_db = "webtech2";  // ✅ updated database name
 ?>
