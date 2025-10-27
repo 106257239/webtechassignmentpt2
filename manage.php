@@ -90,24 +90,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       break;
     case 'search_job':
       $job_ref = mysqli_real_escape_string($conn, $_POST['job_ref']);
-      $query = "SELECT * FROM eoi WHERE job_ref = '$job_ref'";
+      $query = "SELECT * FROM eoi WHERE reference_no = '$job_ref'";
       $result = mysqli_query($conn, $query);
       break;
     case 'search_name':
       $first = mysqli_real_escape_string($conn, $_POST['first_name']);
       $last  = mysqli_real_escape_string($conn, $_POST['last_name']);
-      $query = "SELECT * FROM eoi WHERE first_name LIKE '%$first%' OR last_name LIKE '%$last%'";
+      $query = "SELECT * FROM eoi WHERE firstname LIKE '%$first%' OR last_name LIKE '%$last%'";
       $result = mysqli_query($conn, $query);
       break;
     case 'delete_job':
       $del_ref = mysqli_real_escape_string($conn, $_POST['delete_job_ref']);
-      $query = "DELETE FROM eoi WHERE job_ref = '$del_ref'";
+      $query = "DELETE FROM eoi WHERE reference_no = '$del_ref'";
       if (mysqli_query($conn, $query)) echo "<p>✅ EOIs for Job $del_ref deleted.</p>";
       break;
     case 'update_status':
       $eoi_no = mysqli_real_escape_string($conn, $_POST['eoi_number']);
       $status = mysqli_real_escape_string($conn, $_POST['new_status']);
-      $query = "UPDATE eoi SET status='$status' WHERE EOInumber='$eoi_no'";
+      $query = "UPDATE eoi SET status='$status' WHERE id ='$eoi_no'";
       if (mysqli_query($conn, $query)) echo "<p>✅ EOI $eoi_no updated to $status.</p>";
       break;
     case 'sort_results':
