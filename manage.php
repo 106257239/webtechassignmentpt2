@@ -23,6 +23,7 @@ if (!$conn) {
 
 <!-- Load your main site CSS first -->
 <link rel="stylesheet" href="styles/style.css">
+
 </head>
 <body>
 <header><h1>     Save The Shrimps  </h1></header>
