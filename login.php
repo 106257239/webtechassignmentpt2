@@ -17,14 +17,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $username = trim($_POST['username']);
   $password = trim($_POST['password']);
 
-  // Prepared statement to fetch hash
-  $stmt = mysqli_prepare($conn, "SELECT password_hash FROM user WHERE username = ?");
+  // Prepared statement to fetch password
+  $stmt = mysqli_prepare($conn, "SELECT password FROM user WHERE username = ?");
   mysqli_stmt_bind_param($stmt, "s", $username);
   mysqli_stmt_execute($stmt);
   $result = mysqli_stmt_get_result($stmt);
 
   if ($row = mysqli_fetch_assoc($result)) {
-    if (hash('sha256', $password) === $row['password_hash']) {
+    // Compare password directly (no hash)
+    if ($password === $row['password']) {
       $_SESSION['loggedin'] = true;
       $_SESSION['username'] = $username;
       header("Location: manage.php");
@@ -35,6 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   } else {
     $error = "User not found.";
   }
+
   mysqli_stmt_close($stmt);
 }
 mysqli_close($conn);

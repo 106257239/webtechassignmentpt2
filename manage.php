@@ -20,10 +20,17 @@ if (!$conn) {
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Manage EOIs</title>
+
+<!-- Load your main site CSS first -->
 <link rel="stylesheet" href="styles/style.css">
+
+<!-- Load your new EOI table styling second -->
+<link rel="stylesheet" href="styles/newstyles.css">
 </head>
-<body>
-<header><h1>     Save The Shrimps  </h1></header>
+
+<body class="manage-page">
+<header><h1>Save The Shrimps</h1></header>
+
 <nav>
   <ul>
     <li><a href="index.php">Home</a></li>
@@ -31,6 +38,7 @@ if (!$conn) {
     <li><a href="logout.php">Logout</a></li>
   </ul>
 </nav>
+
 <main>
   <h2>HR Manager – Manage EOIs</h2>
 
@@ -87,28 +95,33 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       $query = "SELECT * FROM eoi";
       $result = mysqli_query($conn, $query);
       break;
+
     case 'search_job':
       $job_ref = mysqli_real_escape_string($conn, $_POST['job_ref']);
       $query = "SELECT * FROM eoi WHERE job_ref = '$job_ref'";
       $result = mysqli_query($conn, $query);
       break;
+
     case 'search_name':
       $first = mysqli_real_escape_string($conn, $_POST['first_name']);
       $last  = mysqli_real_escape_string($conn, $_POST['last_name']);
       $query = "SELECT * FROM eoi WHERE first_name LIKE '%$first%' OR last_name LIKE '%$last%'";
       $result = mysqli_query($conn, $query);
       break;
+
     case 'delete_job':
       $del_ref = mysqli_real_escape_string($conn, $_POST['delete_job_ref']);
       $query = "DELETE FROM eoi WHERE job_ref = '$del_ref'";
-      if (mysqli_query($conn, $query)) echo "<p>✅ EOIs for Job $del_ref deleted.</p>";
+      if (mysqli_query($conn, $query)) echo "<p class='message'>✅ EOIs for Job $del_ref deleted.</p>";
       break;
+
     case 'update_status':
       $eoi_no = mysqli_real_escape_string($conn, $_POST['eoi_number']);
       $status = mysqli_real_escape_string($conn, $_POST['new_status']);
       $query = "UPDATE eoi SET status='$status' WHERE EOInumber='$eoi_no'";
-      if (mysqli_query($conn, $query)) echo "<p>✅ EOI $eoi_no updated to $status.</p>";
+      if (mysqli_query($conn, $query)) echo "<p class='message'>✅ EOI $eoi_no updated to $status.</p>";
       break;
+
     case 'sort_results':
       $sort_field = mysqli_real_escape_string($conn, $_POST['sort_field']);
       $query = "SELECT * FROM eoi ORDER BY $sort_field ASC";
@@ -117,9 +130,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   }
 
   if ($result && mysqli_num_rows($result) > 0) {
-    echo "<table border='1'><tr>
+    echo "<div class='table-container'><table><caption>EOI Records</caption><tr>
             <th>EOI#</th><th>Job Ref</th><th>First Name</th><th>Last Name</th>
             <th>Email</th><th>Status</th></tr>";
+
     while ($row = mysqli_fetch_assoc($result)) {
       echo "<tr>
               <td>{$row['EOInumber']}</td>
@@ -130,7 +144,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
               <td>{$row['status']}</td>
             </tr>";
     }
-    echo "</table>";
+    echo "</table></div>";
   } elseif ($result) {
     echo "<p>No results found.</p>";
   }
