@@ -298,6 +298,35 @@ tr:hover {
         </tbody>
       </table>
     </section>
+  <h3 id="fun_h3" class="about_heading">Team Contributions</h3>
+<?php
+  require_once "settings.php";
+  $dbconn = @mysqli_connect($host,$user,$pwd,$sql_db);
+  if($dbconn){
+      $query = "SELECT * FROM contributions";
+      $result = mysqli_query($dbconn, $query);
+      if($result){
+
+      }else{echo "<p>There are no contributions to display.</p>";}
+      mysqli_close($dbconn);
+  }else{ echo "<p>Unable to connect to the db.</p>";}
+?>
+      <table>
+          <thead>
+              <th style="font-size:1vw">Name</th>
+              <th style="font-size:1vw">Part 1 contributions</th>
+              <th style="font-size:1vw">Part 2 contributions</th>
+          </thead>
+<?php
+  while ($row = mysqli_fetch_assoc($result)) {
+  echo "<tr>";
+  echo "<td style='font-size:1vw'>" . $row['name'] . "</td>";
+  echo "<td style='font-size:1vw'>" . $row['pt1'] . "</td>";
+  echo "<td style='font-size:1vw'>" . $row['pt2'] . "</td>";
+  echo "</tr>";
+  }
+?>
+      </table>
 
     <!-- Contact info -->
     <aside id="about_aside">
