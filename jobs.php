@@ -28,8 +28,20 @@
 <!-- header/nav (shared across all pages)-->
     <!--start of header and nav -->    
 <?php
-    include('header.inc');
-    include('nav.inc');
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+include('header.inc');
+include('nav.inc');
+require_once('settings.php');
+
+$conn = @mysqli_connect($host, $user, $pwd, $sql_db);
+if (!$conn) {
+    die("<p>❌ Database connection failed: " . mysqli_connect_error() . "</p>");
+}
+
+$sql = "SELECT * FROM jobs ORDER BY closing_date ASC";
+$result = mysqli_query($conn, $sql);
 ?>
     <!--start of content -->
         <main>
@@ -48,84 +60,29 @@
                 <!--inline css to fufill assignment requirements-->
                 <p style="font-style: italic; font-size:1.5vw"><strong>Note:</strong> Save The Shrimp &copy; is a none for profit organization and all Positions are on a Volunteer basis</p>
             </aside >
-            <!--end of pages aside-->
-            <!-- start of job one -->
-            <section class="job_pos" aria-labelledby="job_1">   
-                <!-- heading links to apply page with a blank title so it opens in the same page-->                
-                        <h4 class="job_title" id="job_1" style="font-size:2vw">Entry Level Web Developer</h4> 
-                        <h5 class="jobno" style="font-size:2vw">Job No <br></h5> 
-                        <p class="job_num" style="font-size:2vw">#B28L0</p>
-                        <!--list for job requirements-->
-                        <dl class="job_list">
-                            <dt style="font-size:1vw"><strong>Description:</strong></dt>
-                                <dd>Join an exciting team of passionate volunteers and feel the real impact of your work, this role is to be a crucial part of our Web Dev team Assist in the creation and maintenance of the organizations web presences,
-                                help get the word out about our great cause </dd>
-                            <dt style="font-size:1vw"><strong>Salary:</strong></dt>
-                                <dd>$0</dd>
-                            <dt style="font-size:1vw"><strong>Reporting Line:</strong></dt>
-                                <dd>Head of Web Development<dd>
-                            <dt style="font-size:1vw"><strong>Key Responsibilities:</strong></dt>
-                                <dd>
-                                    <ul class = "job_ul">
-                                <!--nested list for responsabilities-->
-                                        <li style="font-size:1vw">Assist in Maintenance and up keep of website</li>
-                                        <li style="font-size:1vw">Implement new exciting features</li>
-                                        <li style="font-size:1vw">Work within a team of other enthusiastic web developers </li>
-                                    </ul>
-                                </dd>
-                            <dt style="font-size:1vw"><strong>Requirements:</strong></dt>
-                            <!--nested list for requirements-->
-                                <dd>
-                                    <ol>
-                                    <h5>Required</h5>
-                                        <li>Knowledge of HTML, CSS, RUBY, JAVA SCRIPT</li>
-                                        <li>Strong ability to work as an effective team member</li>
-                                    <h5>Preferred</h5>
-                                        <li>A Can do attitude</li>
-                                        <li>enthusiasm and a loving of learning </li>
-                                        <li>A love of Krill (a disdain for whales is also encouraged)</li>
-                                </ol>
-                            </dd>
-                        </dt>
-            </section>
-            <!--end of job 1-->
-            <!--start of job 2-->
-            <section class="job_pos" aria-labelledby="job_2">
-                        <h4 class="job_title" id="job_2" style="font-size:2vw">Entry Level Software Developer</h4>
-                        <h5 class="jobno" style="font-size:2vw">Job No <br> </h5> <p class="job_num" style="font-size:2vw">#A74K9</p>
-                        <ul class="job_list">
-                            <dl class="job_list">
-                            <dt style="font-size:1vw"><strong>Description:</strong></dt>
-                                <dd>Join an exciting team of passionate volunteers and feel the real impact of your work, this role is to be a
-                                    crucial part of our software Dev team Assist in the creation and maintenance of the organizations 
-                                    internally used software such as our world class whale tracking systems </dd>
-                            <dt style="font-size:1vw"><strong>Salary:</strong></dt>
-                                <dd>$0</dd>
-                            <dt style="font-size:1vw"><strong>Reporting Line:</strong></dt>
-                                <dd>Head of Software Development<dd>
-                            <dt style="font-size:1vw"><strong>Key Responsibilities:</strong></dt>
-                                <dd>
-                                    <ul class = "job_ul">
-                                <!--nested list for responsabilities-->
-                                        <li>Maintenance and up keep of internally used systems</li>
-                                        <li>Implement new exciting features</li>
-                                        <li>Work within a team of other enthusiastic of software developers</li>
-                                    </ul>
-                                </dd>
-                            <dt><strong>Requirements:</strong></dt>
-                            <!--nested list for requirements-->
-                                <dd>
-                                    <ol>
-                                    <h5>Required</h5>
-                                        <li>Knowledge of HTML, CSS, RUBY, JAVA SCRIPT</li>
-                                        <li>Strong ability to work as an effective team member</li>
-                                    <h5>Preferred</h5>
-                                        <li>A Can do attitude</li>
-                                        <li>enthusiasm and a loving of learning </li>
-                                        <li>A love of Krill (a disdain for whales is also encouraged)</li>
-                                </ol>
-                            </dd>
-                        </dt>
+<?php
+  if ($result && mysqli_num_rows($result) > 0) {
+      while ($row = mysqli_fetch_assoc($result)) {
+          echo "<section class='job_pos'>";
+          echo "<h3 class='job_title'>{$row['job_title']} ({$row['job_ref']})</h3>";
+          echo "<ul class='job_list'>";
+          echo "<li><strong>Description:</strong> {$row['job_description']}</li>";
+          echo "<li><strong>Location:</strong> {$row['location']}</li>";
+          echo "<li><strong>Position Type:</strong> {$row['position_type']}</li>";
+          echo "<li><strong>Contract Type:</strong> {$row['contract_type']}</li>";
+          echo "<li><strong>Salary Range:</strong> {$row['salary_range']}</li>";
+          echo "<li><strong>Closing Date:</strong> {$row['closing_date']}</li>";
+          echo "<li><strong>Qualifications:</strong> {$row['qualifications']}</li>";
+          echo "<li><strong>Responsibilities:</strong> {$row['responsibilities']}</li>";
+          echo "</ul>"
+          echo "</section><hr>";
+      }
+  } else {
+      echo "<p>No volunteer roles are currently open. Please check back soon!</p>";
+  }
+
+  mysqli_close($conn);
+  ?>
             <!--end of job 2-->
             <!-- apply now button to go to apply section -->
             </section>
