@@ -252,7 +252,7 @@ tr:hover {
         <section class ="about_section" aria-labelledby="photo_h3">
             <h3 id="photo_h3" class="about_heading">Meet the Team</h3>
             <figure>
-                <img src="styles/images/Screenshot 2025-09-24 at 5.44.08 pm.png" alt="Group photo of Save the Shrimps Dev Team" width="500">
+                <img src="styles/images/screenshot-2025-09-24-at-5.44.08 pm.png" alt="Group photo of Save the Shrimps Dev Team" width="500">
                 <figcaption>The Save the Shrimps Team</figcaption>
             </figure>
         </section>
