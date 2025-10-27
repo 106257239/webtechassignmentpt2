@@ -181,56 +181,6 @@ tr:hover {
   font-size: 0.95em;
 }
 
-/* ----- Footer ----- */
-footer {
-  text-align: center;
-  background-color: #003d4d;
-  color: #ffffff;
-  padding: 20px;
-  font-size: 0.95em;
-  letter-spacing: 0.4px;
-  margin-top: 40px;
-}
-
-footer a {
-  color: #ffdd00;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-/* === Group photo styling === */
-figure {
-  text-align: center;
-  border: 4px solid #005f73;     /* teal border */
-  border-radius: 12px;
-  background-color: #ffffff;
-  padding: 10px;
-  margin: 30px auto;
-  width: fit-content;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-figure:hover {
-  transform: scale(1.03);
-  border-color: #ff6f61;          /* coral highlight on hover */
-}
-
-figure img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
-
-figcaption {
-  margin-top: 8px;
-  font-style: italic;
-  color: #333333;
-  font-size: 0.95em;
-}
 
 }
 </style>
@@ -240,22 +190,10 @@ figcaption {
 
 <body id="about_body">
   <!-- Shared header -->
-  <header>
-    <!-- Image sourced from https://www.freepik.com/ (User: Catalyst stuff) -->
-    <img src="styles/images/shrimp_no_bg.png" alt="cartoon shrimp mascot" title="Save The Shrimps" id="shrimp">
-    <a href="index.html"><h1>Save The Shrimps</h1></a>
-  </header>
-
-    <!-- Shared nav -->
-    <nav>
-        <ul>
-            <li><a href="./index.html" target="_self" title="Home Page" hreflang="en">Home Page</a></li>
-            <li><a href="./about.html" target="_self" title="About Page" hreflang="en">About Us</a></li>
-            <li><a href="./jobs.html" target="_self" title="Jobs Page" hreflang="en">Jobs</a></li>
-            <li><a href="./apply.html" target="_self" title="Apply Page" hreflang="en">Volunteer</a></li>
-        </ul>
-    </nav>
-
+ <?php 
+      include('header.inc');
+    include('nav.inc');
+  ?>
     <!-- Main content -->
     <main>
         <!-- Page heading -->
@@ -372,10 +310,9 @@ figcaption {
 
   <!-- Shared footer -->
   <footer>
-    <p>&copy; 2025 Save the Shrimps |
-      <a href="https://github.com/your-repo" target="_blank">GitHub</a> |
-      <a href="https://jira.company.com" target="_blank">Jira</a>
-    </p>
+    <?php
+      include('footer.inc');
+?>
   </footer>
 </body>
 </html>

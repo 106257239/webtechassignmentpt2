@@ -26,14 +26,10 @@ if (!$conn) {
 
 </head>
 <body>
-<header><h1>     Save The Shrimps  </h1></header>
-<nav>
-  <ul>
-    <li><a href="index.php">Home</a></li>
-    <li><a href="jobs.php">Jobs</a></li>
-    <li><a href="logout.php">Logout</a></li>
-  </ul>
-</nav>
+<?php 
+      include('header.inc');
+      include('nav.inc');
+  ?>
 <main>
   <h2>HR Manager – Manage EOIs</h2>
 
@@ -167,6 +163,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 mysqli_close($conn);
 ?>
 </main>
+  <?php
+    include('footer.inc');
+  ?>
 </body>
 </html>
 

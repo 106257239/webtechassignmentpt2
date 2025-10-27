@@ -10,13 +10,13 @@
                 <a href="https://github.com/106257239/webtechassignmentpt2">https://github.com/106257239/webtechassignmentpt2</a>.
             </p>
             <!-- Contact info -->
-            <aside id="about_aside">
+            <!-- <aside id="about_aside"> -->
             <p style="font-style: italic; font-size:1vw">
                 <strong>Note:</strong> This is a student project for Swinburne.  
                 For inquiries, contact us at 
                 <a href="mailto:savetheshrimps@project.com">savetheshrimps@project.com</a>.
             </p>
-            </aside>
+            <!-- </aside> -->
         </footer>
     </body>
 </html>
