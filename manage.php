@@ -169,3 +169,45 @@ mysqli_close($conn);
 </main>
 </body>
 </html>
+
+<body class="manage-page">
+
+<style>
+/* === IMPROVED TABLE DESIGN: Centered + Accessible Colors === */
+body.manage-page table {
+  width: 90%; /* narrower for centered look */
+  margin: 25px auto; /* centers the table */
+  border-collapse: collapse;
+  background-color: #fffdf5 !important; /* light cream background */
+  border: 2px solid #d6a23f !important; /* warm brown-gold border */
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 15px;
+  text-align: center;
+}
+
+body.manage-page th {
+  background-color: #f4b942 !important; /* gold header (accessible contrast) */
+  color: #1a1a1a !important; /* dark text for strong contrast */
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 10px;
+  border-bottom: 3px solid #d6a23f !important;
+}
+
+body.manage-page td {
+  padding: 10px;
+  border-bottom: 1px solid #e7c776 !important;
+  color: #222;
+}
+
+body.manage-page tr:nth-child(even) {
+  background-color: #fff5d6 !important; /* pale yellow rows */
+}
+
+body.manage-page tr:hover {
+  background-color: #ffe99f !important; /* soft hover effect */
+  transition: background-color 0.3s ease;
+}
+</style>
