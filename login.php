@@ -48,6 +48,7 @@ mysqli_close($conn);
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login - Save The Shrimps</title>
   <link rel="stylesheet" href="styles/style.css">
+  <link rel="icon" type="image/x-icon" href="styles/images/shrimp.jpg">
   <style>
     body {
       font-family: Arial, sans-serif;

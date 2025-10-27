@@ -9,6 +9,7 @@
         <link rel="icon" type="image/x-icon" href="styles/images/shrimp.jpg">
         <!--CSS Refrencing-->
         <link href="styles/style.css"rel= "stylesheet">
+        <link rel="icon" type="image/x-icon" href="styles/images/shrimp.jpg">
         <!--page tab title-->
         <title>Form Results</title>
     </head>

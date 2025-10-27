@@ -6,7 +6,7 @@
         <meta name = "description" content = "Save the Krill non-profit home page">
         <meta name = "keywords" content = "homepage, non-profit, organisation, savethekrill, krill, whale">
         <meta name = "author" content = "Jack Milan Krbaleski">
-
+        <link rel="icon" type="image/x-icon" href="styles/images/shrimp.jpg">
         <link rel = "stylesheet" href="./styles/style.css">
 
         <title>Save The Krill Home Page</title>

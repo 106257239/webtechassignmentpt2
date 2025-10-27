@@ -7,6 +7,7 @@
     <meta name="keywords" content="about us, team, save the shrimps, swinburne project">
     <meta name="author" content="Vethum Helith">
     <link href="styles/style.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="styles/images/shrimp.jpg">
  <style>    #vethumhelith
  /* === Improved About Page Typography === */
 
